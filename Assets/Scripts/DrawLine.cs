@@ -17,6 +17,7 @@ public class DrawLine : MonoBehaviour
     private Vector3 MousePosition;
     public bool isCollide;
     public GameObject hitobject;
+    public float distance;
     private void Update()
     {
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -26,7 +27,7 @@ public class DrawLine : MonoBehaviour
         var dir = Vector3.Normalize(MousePosition - player.position);
         //Debug.Log(MousePosition);
         //Debug.Log(dir);
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir);
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir,distance);
         //Debug.DrawRay(origin, dir);
         
         if(hit.collider != null)
