@@ -8,10 +8,6 @@ public class CameraComponent : MonoBehaviour
     public float YMargin;
     public float XSmooth = 8.0f;
     public float YSmooth = 8.0f;
-    public float XDistance;
-    public float YDistance;
-    public Vector3 MaxXAndY;
-    public Vector3 MinXAndY;
 
     public Transform Target;
 
@@ -39,6 +35,6 @@ public class CameraComponent : MonoBehaviour
         {
             targetY = Mathf.Lerp(transform.position.y, Target.position.y, YSmooth * Time.deltaTime);
         }
-        transform.position = new Vector3(targetX + XDistance, targetY + YDistance, transform.position.z);
+       transform.position = new Vector3(targetX , targetY , transform.position.z);
     }
 }
