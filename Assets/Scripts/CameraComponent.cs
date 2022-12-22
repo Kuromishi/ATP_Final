@@ -21,7 +21,7 @@ public class CameraComponent : MonoBehaviour
     }
     bool CheckYMargin()
     {
-        return Mathf.Abs(transform.position.y - Target.position.y) < YMargin + 89.0f;
+        return Mathf.Abs(transform.position.y - Target.position.y) > YMargin;
     }
     void FixedUpdate()
     {

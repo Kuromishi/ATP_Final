@@ -11,9 +11,12 @@ public class CharacterComponent : MonoBehaviour
     Vector2 movementInput;
     Vector2 movementVelocity;
 
+    public ColorType CharacterColor;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        CharacterColor.rgb = 0;
     }
 
     void Update()

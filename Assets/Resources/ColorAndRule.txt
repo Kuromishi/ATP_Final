@@ -1,2 +1,2 @@
-Red 20,20,20
-Green 30,30,30
+Red Red
+Green Green

@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Line: {fileID: 7660366164426959192, guid: 05fec6442fa060d4ba1c40007e263aea, type: 3}
+  FloorColor: {fileID: 11400000, guid: 23bb10a24155a6c4bbd615a1898c0260, type: 2}
+  RGB: 1
+  characterColor: {fileID: 3675778334729438247, guid: 452c138112f8faf4d822e4c068e30b8e, type: 3}
