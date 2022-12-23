@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterComponent : MonoBehaviour
 {
+    //character
     Rigidbody2D rigidBody;
     public float detectiveSpeed = 5f;
     private float horizontalInput;
@@ -11,12 +12,13 @@ public class CharacterComponent : MonoBehaviour
     Vector2 movementInput;
     Vector2 movementVelocity;
 
-    public ColorType CharacterColor;
+    public string CharacterColor;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        CharacterColor.rgb = 0;
+        //CharacterColor.rgb = 0;
+        CharacterColor = "white";
     }
 
     void Update()

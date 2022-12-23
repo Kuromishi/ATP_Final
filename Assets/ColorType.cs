@@ -6,14 +6,16 @@ using UnityEngine;
 public class ColorType : ScriptableObject
 {
     //不要移动这个脚本的位置
-    public int rgb;
+    //public int rgb;
+    public string Colorname;
     
-    public string objname;
-    public static ColorType AddColor(ColorType a,ColorType b)
-    {
-        ColorType c = new ColorType();
-        c.rgb = a.rgb + b.rgb;
-        return c;
-    }
+    //public static ColorType AddColor(ColorType a,ColorType b)
+    //{
+    //    ColorType c = new ColorType();
+    //    c.rgb = a.rgb + b.rgb;
+    //    return c;
+    //}
+
+   
     //需要定义一下rgb值对应的贴图
 }
