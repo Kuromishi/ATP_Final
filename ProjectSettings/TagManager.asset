@@ -6,6 +6,8 @@ TagManager:
   tags:
   - floor
   - line
+  - status
+  - influ
   layers:
   - Default
   - TransparentFX

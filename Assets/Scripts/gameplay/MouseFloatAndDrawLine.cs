@@ -21,7 +21,12 @@ public class MouseFloatAndDrawLine : MonoBehaviour
         //FloorColor.rgb = RGB;
         characterColor = GameManager.Instance.characterColor;
         //MouseClickCount = false;
+        if(this.tag == "floor"||this.tag =="influ")
+        {
+              this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(FloorColor, typeof(Sprite));
+        }
         
+
     }
 
     // Update is called once per frame
@@ -40,17 +45,17 @@ public class MouseFloatAndDrawLine : MonoBehaviour
 if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitobject)
         {
           this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 1);
-            if(Input .GetMouseButtonDown(0))
+            if(Input .GetMouseButtonDown(0)&&this .tag !="influ")
             {//左键将混合后的颜色加到主角身上
                 Debug.Log(FloorColor);
                 Debug.Log(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
-                string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
+                //string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 
                 Debug.Log(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 
             }
-            if(Input.GetMouseButtonDown(1))
+            if(Input.GetMouseButtonDown(1)&&this .tag !="status")
             {//右键将物体颜色染成主角的颜色
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
                 string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);

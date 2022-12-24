@@ -57,7 +57,13 @@ public class AcquirAndShootColor : MonoBehaviour
     private void Awake()
     {
         image.sprite = (Sprite)Resources.Load("0", typeof(Sprite));
-        allObj = GameObject.FindGameObjectsWithTag("floor");
+        
+        GameObject[] floorA= GameObject.FindGameObjectsWithTag("floor");
+        GameObject[] influA= GameObject.FindGameObjectsWithTag("influ");
+        List<GameObject> tempList = new List<GameObject>();
+        tempList.AddRange(floorA);
+        tempList.AddRange(influA);
+        allObj = tempList.ToArray();
     }
     public string ReturnColor(string colorname1, string colorname2)
     {
