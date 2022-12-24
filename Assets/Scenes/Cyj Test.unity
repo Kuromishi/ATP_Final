@@ -890,8 +890,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e39850a4225084b907363594c47020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightValue: -40
+  lightOffValue: -40
+  lightOnValue: 0
   ppChange: {fileID: 1399643629}
+  inTrigger: 0
 --- !u!1 &1300516453
 GameObject:
   m_ObjectHideFlags: 0

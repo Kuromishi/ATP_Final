@@ -5,21 +5,36 @@ using UnityEngine;
 
 public class LightChange : MonoBehaviour
 {
-    public float lightValue;
+    public float lightOffValue;
+    public float lightOnValue;
     public PPChange ppChange;
-    private bool isLightOn=false;
+    private bool isLightOn = true;
+    private bool inTrigger = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isLightOn)
+        if (Input.GetKeyDown(KeyCode.E) && inTrigger)
         {
-            ppChange.LightChange();
+            if(isLightOn)
+            {
+                isLightOn = false;
+                ppChange.LightOff();
+                
+            }
+            else
+            {
+                isLightOn = true;
+                ppChange.LightOn();
+               
+            }
+
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isLightOn = true;
+        inTrigger = true;
     }
 
 }
