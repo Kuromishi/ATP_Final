@@ -137,11 +137,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -986439648031629862, guid: 894858eab9b49c244af06ff1a15f1b56, type: 3}
       propertyPath: FloorColor
-      value: red
+      value: blue
       objectReference: {fileID: 0}
     - target: {fileID: -986439648031629862, guid: 894858eab9b49c244af06ff1a15f1b56, type: 3}
       propertyPath: correctColor
-      value: pink
+      value: green
       objectReference: {fileID: 0}
     - target: {fileID: 7816449409412720147, guid: 894858eab9b49c244af06ff1a15f1b56, type: 3}
       propertyPath: m_RootOrder
@@ -1007,7 +1007,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -503003525012192543, guid: 452c138112f8faf4d822e4c068e30b8e, type: 3}
       propertyPath: CharacterColor
-      value: white
+      value: transp
       objectReference: {fileID: 0}
     - target: {fileID: 3675778334729438244, guid: 452c138112f8faf4d822e4c068e30b8e, type: 3}
       propertyPath: m_Size.x
@@ -1113,11 +1113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285263008383260085, guid: 04a3a136743c63a45a07496847262fa5, type: 3}
       propertyPath: FloorColor
-      value: red
+      value: blue
       objectReference: {fileID: 0}
     - target: {fileID: 285263008383260085, guid: 04a3a136743c63a45a07496847262fa5, type: 3}
       propertyPath: correctColor
-      value: pink
+      value: purple
       objectReference: {fileID: 0}
     - target: {fileID: 285263008383260085, guid: 04a3a136743c63a45a07496847262fa5, type: 3}
       propertyPath: characterColor

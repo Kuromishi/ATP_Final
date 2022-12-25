@@ -18,7 +18,7 @@ public class CharacterComponent : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         //CharacterColor.rgb = 0;
-        CharacterColor = "white";
+        CharacterColor = "transp";
     }
 
     void Update()
@@ -28,7 +28,10 @@ public class CharacterComponent : MonoBehaviour
 
         movementInput = new Vector2(horizontalInput, verticalInput);
         movementVelocity = movementInput.normalized * detectiveSpeed;
-
+        if(Input .GetMouseButtonDown(2))
+        {
+            CharacterColor = "transp";
+        }
     }
     private void FixedUpdate()
     {

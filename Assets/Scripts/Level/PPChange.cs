@@ -21,11 +21,12 @@ public class PPChange : MonoBehaviour
     public void LightOff()
     {
         colorGrading.brightness.Override(lightChange.lightOffValue);
+        
     }
     public void LightOn()
     {
         colorGrading.brightness.Override(lightChange.lightOnValue);
-
+        
     }
 
 }
