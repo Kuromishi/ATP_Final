@@ -55,7 +55,7 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
                 Debug.Log(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 
             }
-            if(Input.GetMouseButtonDown(1)&&this .tag !="status")
+            if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp")
             {//右键将物体颜色染成主角的颜色
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
                 string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: e9241a92c56087444885dfff26f7646b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 083d714346075514b91f167b35c4228e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16.69, y: 19.31}
+    oldSize: {x: 18.9, y: 18.9}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,7 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a89627f470525345ad0e2bb62b9d8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Line: {fileID: 7660366164426959192, guid: 05fec6442fa060d4ba1c40007e263aea, type: 3}
-  FloorColor: {fileID: 11400000, guid: 23bb10a24155a6c4bbd615a1898c0260, type: 2}
-  RGB: 1
-  characterColor: {fileID: 3675778334729438247, guid: 452c138112f8faf4d822e4c068e30b8e, type: 3}
+  FloorColor: 
+  correctColor: 
