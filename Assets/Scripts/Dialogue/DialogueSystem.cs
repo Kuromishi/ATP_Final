@@ -12,6 +12,7 @@ public class DialogueSystem : MonoBehaviour
 
     public float textSpeed;
     private bool textFinished;
+    private bool cancelTyping;
 
     List<string> textList = new List<string>();
 
@@ -53,13 +54,25 @@ public class DialogueSystem : MonoBehaviour
             characterDetective.isTalking = false;
             talkButton.uiButton.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.E) && textFinished==true)
-        {
-            //textLabel.text = textList[index];
-            //index++;
+        //if (Input.GetKeyDown(KeyCode.E) && textFinished==true)
+        //{
+        //    //textLabel.text = textList[index];
+        //    //index++;
 
-            StartCoroutine(MovingTextUI());
-            //characterDetective.isTalking = true;
+        //    StartCoroutine(MovingTextUI());
+        //    //characterDetective.isTalking = true;
+        //}
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(textFinished && !cancelTyping)
+            {
+                StartCoroutine(MovingTextUI());
+            }
+            else if(!textFinished) //开始coroutine
+            {
+                cancelTyping = !cancelTyping; //没摁下摁键就改变值（在打字的时候，摁下摁键==cancel）
+            }
         }
     }
 
@@ -81,12 +94,23 @@ public class DialogueSystem : MonoBehaviour
         textFinished = false;  //一行文字结束后，才可以进行第二行字
         textLabel.text = ""; //每行打完列表清空，再打下一行
 
-        for(int i = 0; i < textList[index].Length; i++)  //获得一行中的每一个字符，获得当前行的长度
-        {
-            textLabel.text += textList[index][i];  //第i个字符
+        //for(int i = 0; i < textList[index].Length; i++)  //获得一行中的每一个字符，获得当前行的长度
+        //{
+        //    textLabel.text += textList[index][i];  //第i个字符
 
+        //    yield return new WaitForSeconds(textSpeed);
+        //}
+
+        int letter = 0;
+        while(!cancelTyping && letter < textList[index].Length-1)
+        {
+            textLabel.text += textList[index][letter];
+            letter++;
             yield return new WaitForSeconds(textSpeed);
         }
+
+        textLabel.text = textList[index];
+        cancelTyping = false;
 
         textFinished = true;
         index++;
