@@ -71,7 +71,7 @@ public class DialogueSystem : MonoBehaviour
             }
             else if(!textFinished) //开始coroutine
             {
-                cancelTyping = !cancelTyping; //没摁下摁键就改变值（在打字的时候，摁下摁键==cancel）
+                cancelTyping = !cancelTyping; //每摁下摁键就改变值（在打字的时候，摁下摁键==cancel）
             }
         }
     }
@@ -102,7 +102,7 @@ public class DialogueSystem : MonoBehaviour
         //}
 
         int letter = 0;
-        while(!cancelTyping && letter < textList[index].Length-1)
+        while(!cancelTyping && letter < textList[index].Length)
         {
             textLabel.text += textList[index][letter];
             letter++;
