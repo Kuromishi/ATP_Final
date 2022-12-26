@@ -15,9 +15,15 @@ public class DialogueSystem : MonoBehaviour
 
     List<string> textList = new List<string>();
 
+    public Animator anim_NPC;
+
+    public CharacterComponent characterDetective;
+    public TalkButton talkButton;
+
     //void Start()
     //{
     //    GetTextFromFile(textFile);
+
     //}
 
     void Awake()
@@ -31,7 +37,9 @@ public class DialogueSystem : MonoBehaviour
         //index++;
 
         StartCoroutine(MovingTextUI());
-
+        anim_NPC.SetBool("isTalking", true);
+        characterDetective.isTalking = true;
+        talkButton.uiButton.SetActive(false);
     }
 
     void Update()
@@ -40,13 +48,18 @@ public class DialogueSystem : MonoBehaviour
         {
             gameObject.SetActive(false);
             index = 0;
-        } 
-        if(Input.GetKeyDown(KeyCode.E) && textFinished==true)
+
+            anim_NPC.SetBool("isTalking", false);
+            characterDetective.isTalking = false;
+            talkButton.uiButton.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && textFinished==true)
         {
             //textLabel.text = textList[index];
             //index++;
 
             StartCoroutine(MovingTextUI());
+            //characterDetective.isTalking = true;
         }
     }
 

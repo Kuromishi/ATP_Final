@@ -14,6 +14,8 @@ public class CharacterComponent : MonoBehaviour
 
     public string CharacterColor;
 
+    public bool isTalking;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -35,7 +37,7 @@ public class CharacterComponent : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(rigidBody)
+        if(rigidBody && !isTalking)
         {
             rigidBody.MovePosition(rigidBody.position + movementVelocity * Time.deltaTime);
         }
