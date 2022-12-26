@@ -21,7 +21,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
         //FloorColor.rgb = RGB;
         characterColor = GameManager.Instance.characterColor;
         //MouseClickCount = false;
-        if(this.tag == "floor"||this.tag =="influ")
+        if(this.tag == "floor"||this.tag =="influ" || this.tag == "dissolve")
         {
               this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(FloorColor, typeof(Sprite));
         }
@@ -45,7 +45,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
 if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitobject)
         {
           this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 1);
-            if(Input .GetMouseButtonDown(0)&&this .tag !="influ")
+            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "dissolve")
             {//左键将混合后的颜色加到主角身上
                 Debug.Log(FloorColor);
                 Debug.Log(characterColor.GetComponent<CharacterComponent>().CharacterColor);

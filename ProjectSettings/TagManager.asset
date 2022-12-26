@@ -8,6 +8,7 @@ TagManager:
   - line
   - status
   - influ
+  - dissolve
   layers:
   - Default
   - TransparentFX

@@ -34,7 +34,7 @@ public class DrawLine : MonoBehaviour
         {
             //Debug.Log("is collide");
             //Debug.Log(hit.collider.gameObject.name);
-            if (hit.collider.gameObject.tag == "floor"|| hit.collider.gameObject.tag == "status"|| hit.collider.gameObject.tag == "influ")
+            if (hit.collider.gameObject.tag == "floor"|| hit.collider.gameObject.tag == "status"|| hit.collider.gameObject.tag == "influ" || hit.collider.gameObject.tag == "dissolve")
         {
             //Debug.Log("collide floor");
             isCollide = true;

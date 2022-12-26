@@ -15,11 +15,11 @@ public class LightChange : MonoBehaviour
     private void Awake()
     {
         GameObject[] floorA = GameObject.FindGameObjectsWithTag("floor");
-        GameObject[] influA = GameObject.FindGameObjectsWithTag("influ");
+        
         GameObject[] statusA = GameObject.FindGameObjectsWithTag("status");
         List<GameObject> tempList = new List<GameObject>();
         tempList.AddRange(floorA);
-        tempList.AddRange(influA);
+        
         tempList.AddRange(statusA);
         AllObj = tempList.ToArray();
     }
