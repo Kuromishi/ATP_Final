@@ -16,9 +16,24 @@ public class AcquirAndShootColor : MonoBehaviour
     public bool isFinish = false;
     private bool isFinishedTemp = true;
 
-    public List<GameObject> gameObjects = new List<GameObject>();
+    
     private List<GameObject> tempList = new List<GameObject>();
-    private bool isListFinished = true;
+
+    [Header("群体消融列表") ]
+public List<GameObject> gameObjects1 = new List<GameObject>();
+    private bool isListFinished1 = true;
+    public List<GameObject> gameObjects2 = new List<GameObject>();
+    private bool isListFinished2 = true;
+    public List<GameObject> gameObjects3 = new List<GameObject>();
+    private bool isListFinished3 = true;
+    public List<GameObject> gameObjects4 = new List<GameObject>();
+    private bool isListFinished4 = true;
+    public List<GameObject> gameObjects5 = new List<GameObject>();
+    private bool isListFinished5 = true;
+
+
+
+
     public Material mat;
 
     public GameObject characterColor;
@@ -39,6 +54,11 @@ public class AcquirAndShootColor : MonoBehaviour
         {"darkblue", new Dictionary<string, string> { { "darkblue", "darkblue" }, { "white", "blue" }, { "transp", "darkblue" } }},
         {"darkgreen", new Dictionary<string, string> { { "darkgreen", "darkgreen" }, { "white", "green" }, { "transp", "darkgreen" } }}
 
+    };
+
+    public Dictionary<string, string > huburules = new Dictionary<string, string >
+    {
+        {"blue", "orange"},{"orange","blue"},{"yellow","purple"},{"purple","yellow"},{"red","green"},{"green","red"},{"black","white"},{"white","black"}
     };
     private void Update()
     {
@@ -61,24 +81,97 @@ public class AcquirAndShootColor : MonoBehaviour
             //这里引用动画脚本
         }
 
-        isListFinished = true;
-        foreach (GameObject i in gameObjects)
+        //1
+        isListFinished1 = true;
+        foreach (GameObject i in gameObjects1)
         {
             if(i.GetComponent <MouseFloatAndDrawLine >().FloorColor .Equals (i.GetComponent <MouseFloatAndDrawLine >().correctColor))
             {
 
-            }else { isListFinished = false; }
+            }else { isListFinished1 = false; }
         }
-        Debug.Log(isListFinished);
-        if(isListFinished)
+        Debug.Log(isListFinished1);
+        if(isListFinished1)
         {
-foreach (GameObject j in gameObjects)
+foreach (GameObject j in gameObjects1)
         {
             StartCoroutine(StartDesolve(j));
         }
-            gameObjects.Clear();
+            gameObjects1.Clear();
         }
-        
+        //2
+        isListFinished2 = true;
+        foreach (GameObject i in gameObjects2)
+        {
+            if (i.GetComponent<MouseFloatAndDrawLine>().FloorColor.Equals(i.GetComponent<MouseFloatAndDrawLine>().correctColor))
+            {
+
+            }
+            else { isListFinished2 = false; }
+        }
+        if (isListFinished2)
+        {
+            foreach (GameObject j in gameObjects2)
+            {
+                StartCoroutine(StartDesolve(j));
+            }
+            gameObjects2.Clear();
+        }
+        //3
+        isListFinished3 = true;
+        foreach (GameObject i in gameObjects3)
+        {
+            if (i.GetComponent<MouseFloatAndDrawLine>().FloorColor.Equals(i.GetComponent<MouseFloatAndDrawLine>().correctColor))
+            {
+
+            }
+            else { isListFinished3 = false; }
+        }
+        if (isListFinished3)
+        {
+            foreach (GameObject j in gameObjects3)
+            {
+                StartCoroutine(StartDesolve(j));
+            }
+            gameObjects3.Clear();
+        }
+        //4
+        isListFinished4 = true;
+        foreach (GameObject i in gameObjects4)
+        {
+            if (i.GetComponent<MouseFloatAndDrawLine>().FloorColor.Equals(i.GetComponent<MouseFloatAndDrawLine>().correctColor))
+            {
+
+            }
+            else { isListFinished4 = false; }
+        }
+        if (isListFinished4)
+        {
+            foreach (GameObject j in gameObjects4)
+            {
+                StartCoroutine(StartDesolve(j));
+            }
+            gameObjects4.Clear();
+        }
+        //5
+        isListFinished5 = true;
+        foreach (GameObject i in gameObjects5)
+        {
+            if (i.GetComponent<MouseFloatAndDrawLine>().FloorColor.Equals(i.GetComponent<MouseFloatAndDrawLine>().correctColor))
+            {
+
+            }
+            else { isListFinished5 = false; }
+        }
+        if (isListFinished5)
+        {
+            foreach (GameObject j in gameObjects5)
+            {
+                StartCoroutine(StartDesolve(j));
+            }
+            gameObjects5.Clear();
+        }
+
     }
 
     IEnumerator StartDesolve(GameObject i)
@@ -103,7 +196,7 @@ foreach (GameObject j in gameObjects)
 
     private void Awake()
     {
-        image.sprite = (Sprite)Resources.Load("0", typeof(Sprite));
+        image.sprite = (Sprite)Resources.Load("transp", typeof(Sprite));
         
         GameObject[] floorA= GameObject.FindGameObjectsWithTag("floor");
         GameObject[] influA= GameObject.FindGameObjectsWithTag("influ");
@@ -117,5 +210,11 @@ foreach (GameObject j in gameObjects)
         Dictionary<string, string> a = rules[colorname1];
         string b = a[colorname2];
         return b;
+    }
+
+    public string ReturnContrastColor(string colorname)
+    {
+        string a = huburules[colorname];
+        return a;
     }
 }

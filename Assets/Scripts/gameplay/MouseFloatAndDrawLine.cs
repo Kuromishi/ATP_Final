@@ -45,28 +45,24 @@ public class MouseFloatAndDrawLine : MonoBehaviour
 if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitobject)
         {
           this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 1);
-            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "dissolve")
+            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "dissolve"&& this.tag != "contrast")
             {//左键将混合后的颜色加到主角身上
-                Debug.Log(FloorColor);
-                Debug.Log(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
-                //string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
-                
-                Debug.Log(characterColor.GetComponent<CharacterComponent>().CharacterColor);
-                
-            }
-            if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp")
+            }else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")
+                {
+                    characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnContrastColor(characterColor.GetComponent<CharacterComponent>().CharacterColor);
+                }
+            if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp" && this.tag != "contrast")
             {//右键将物体颜色染成主角的颜色
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
                 string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
-                Debug.Log(this.GetComponent<MouseFloatAndDrawLine>().FloorColor);
+                
             }
             
         }else { this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 0); }
         
-        //Debug.Log("Mouse is over GameObject.");
-        //Debug.Log(this.GetComponent<SpriteRenderer>().material.GetFloat("_Highlighted"));
+        
         }
         
     }

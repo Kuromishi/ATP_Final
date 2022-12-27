@@ -10,6 +10,7 @@ TagManager:
   - influ
   - dissolve
   - dissolveList
+  - contrast
   layers:
   - Default
   - TransparentFX
