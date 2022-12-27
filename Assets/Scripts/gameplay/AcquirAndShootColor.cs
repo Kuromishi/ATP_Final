@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,6 +15,11 @@ public class AcquirAndShootColor : MonoBehaviour
     private GameObject[] allObj;
     public bool isFinish = false;
     private bool isFinishedTemp = true;
+
+    public List<GameObject> gameObjects = new List<GameObject>();
+    private List<GameObject> tempList = new List<GameObject>();
+    private bool isListFinished = true;
+    public Material mat;
 
     public GameObject characterColor;
     public Dictionary<string, Dictionary<string, string>> rules = new Dictionary<string, Dictionary<string, string>> {
@@ -38,6 +44,7 @@ public class AcquirAndShootColor : MonoBehaviour
     {
         string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
         image.sprite = (Sprite)Resources.Load(name, typeof(Sprite));
+
         isFinishedTemp = true;
         for(int i=0;i<allObj.Length; i++)
         {
@@ -46,21 +53,61 @@ public class AcquirAndShootColor : MonoBehaviour
                 
             }else { isFinishedTemp = false; };
         }
-        Debug.Log(isFinishedTemp);
-        Debug.Log(isFinish);
+        //Debug.Log(isFinishedTemp);
+        //Debug.Log(isFinish);
         if(isFinishedTemp)
         {
             isFinish = true;
             //这里引用动画脚本
         }
+
+        isListFinished = true;
+        foreach (GameObject i in gameObjects)
+        {
+            if(i.GetComponent <MouseFloatAndDrawLine >().FloorColor .Equals (i.GetComponent <MouseFloatAndDrawLine >().correctColor))
+            {
+
+            }else { isListFinished = false; }
+        }
+        Debug.Log(isListFinished);
+        if(isListFinished)
+        {
+foreach (GameObject j in gameObjects)
+        {
+            StartCoroutine(StartDesolve(j));
+        }
+            gameObjects.Clear();
+        }
+        
     }
+
+    IEnumerator StartDesolve(GameObject i)
+    {
+        float duration = 0;
+        i.GetComponent<SpriteRenderer>().material = mat;
+        i.GetComponent<SpriteRenderer>().material.SetFloat("_DissolveThreshold", 0.0f);
+        yield return null;
+        while (true)
+        {
+            duration += Time.deltaTime;
+            if (duration > 1.0f)
+            {
+                Destroy(i);
+                break;
+            }
+            float t_val = duration;
+            i.GetComponent<SpriteRenderer>().material.SetFloat("_DissolveThreshold", t_val);
+            yield return null;
+        }
+    }
+
     private void Awake()
     {
         image.sprite = (Sprite)Resources.Load("0", typeof(Sprite));
         
         GameObject[] floorA= GameObject.FindGameObjectsWithTag("floor");
         GameObject[] influA= GameObject.FindGameObjectsWithTag("influ");
-        List<GameObject> tempList = new List<GameObject>();
+        
         tempList.AddRange(floorA);
         tempList.AddRange(influA);
         allObj = tempList.ToArray();

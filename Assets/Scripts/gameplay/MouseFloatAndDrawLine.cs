@@ -21,7 +21,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
         //FloorColor.rgb = RGB;
         characterColor = GameManager.Instance.characterColor;
         //MouseClickCount = false;
-        if(this.tag == "floor"||this.tag =="influ" || this.tag == "dissolve")
+        if(this.tag == "floor"||this.tag =="influ" || this.tag == "dissolve" || this.tag == "dissolveList")
         {
               this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(FloorColor, typeof(Sprite));
         }

@@ -9,6 +9,7 @@ TagManager:
   - status
   - influ
   - dissolve
+  - dissolveList
   layers:
   - Default
   - TransparentFX
