@@ -3,7 +3,7 @@ Shader "Custom/Miaobian"
     Properties
     {
         _MainTex("Texture", 2D) = "white" {}
-        _lineWidth("lineWidth",Range(0,20)) = 1
+        _lineWidth("lineWidth",Range(0,150)) = 1
         _lineColor("lineColor",Color) = (1,1,1,1)
             [Toggle]_Highlighted("High Lighted",Float)=0
     }
@@ -62,7 +62,8 @@ Shader "Custom/Miaobian"
         float2 right_uv = i.uv + float2(1,0) * _lineWidth * _MainTex_TexelSize.xy;
         
         float w = tex2D(_MainTex,up_uv).a * tex2D(_MainTex,down_uv).a * tex2D(_MainTex,left_uv).a * tex2D(_MainTex,right_uv).a;
-        col.rgb = lerp(_lineColor* _Highlighted,col.rgb,w);
+        fixed4 SetLineColor = col * (1 - _Highlighted) + _lineColor * _Highlighted;
+        col.rgb = lerp(SetLineColor,col.rgb,w);
         return col;
     }
     ENDCG

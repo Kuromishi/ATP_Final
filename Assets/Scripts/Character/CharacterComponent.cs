@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class CharacterComponent : MonoBehaviour
 {
-    //character
+    [Header("Character Movement")]
     Rigidbody2D rigidBody;
     public float detectiveSpeed = 5f;
     private float horizontalInput;
     private float verticalInput;
     Vector2 movementInput;
     Vector2 movementVelocity;
+    private float Angle;
 
+    private Vector3 mousePosition;
+
+    [Header("Color")]
     public string CharacterColor;
 
     public bool isTalking;
@@ -34,6 +38,11 @@ public class CharacterComponent : MonoBehaviour
         {
             CharacterColor = "transp";
         }
+
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Angle = Mathf.Atan2(mousePosition.y - transform.position.y, mousePosition.x - transform.position.x) * Mathf.Rad2Deg-83.5f;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, Angle));
+        
     }
     private void FixedUpdate()
     {

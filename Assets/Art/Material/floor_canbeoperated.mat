@@ -9,8 +9,6 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: floor_canbeoperated
   m_Shader: {fileID: 4800000, guid: 38e31afde74b5e745a0f2021bf6bc529, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ShowInnerGlow
@@ -21,7 +19,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -60,7 +57,7 @@ Material:
     - _RimPow: 2
     - _ShowInnerGlow: 1
     - _ShowOutline: 1
-    - _lineWidth: 20
+    - _lineWidth: 150
     m_Colors:
     - _Color: {r: 0.9716981, g: 0.6477987, b: 0.6477987, a: 1}
     - _EdgeColor: {r: 1, g: 0.88416374, b: 0.55345905, a: 1}

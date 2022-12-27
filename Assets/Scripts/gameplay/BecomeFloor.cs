@@ -16,6 +16,7 @@ public class BecomeFloor : MonoBehaviour
     {
         if(this.GetComponent <MouseFloatAndDrawLine >().FloorColor.Equals ( this.GetComponent<MouseFloatAndDrawLine>().correctColor))
         {
+            
             StartCoroutine(StartDesolve());
         }
     }

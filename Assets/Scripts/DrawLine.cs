@@ -18,6 +18,7 @@ public class DrawLine : MonoBehaviour
     public bool isCollide;
     public GameObject hitobject;
     public float distance;
+   
     private void Update()
     {
         MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
