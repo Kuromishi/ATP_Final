@@ -10,18 +10,24 @@ public class LightChange : MonoBehaviour
     public PPChange ppChange;
     private bool isLightOn = true;
     private bool inTrigger = false;
-    private GameObject[] AllObj;
+    [SerializeField ] private GameObject[] AllObj;
+
+    public Dictionary<string, Dictionary<string, string>> rules = new Dictionary<string, Dictionary<string, string>> { };
 
     private void Awake()
     {
         GameObject[] floorA = GameObject.FindGameObjectsWithTag("floor");
         GameObject[] dissolveListA = GameObject.FindGameObjectsWithTag("dissolveList");
         GameObject[] statusA = GameObject.FindGameObjectsWithTag("status");
+        GameObject[] dissolveA = GameObject.FindGameObjectsWithTag("dissolve");
         List<GameObject> tempList = new List<GameObject>();
         tempList.AddRange(floorA);
         tempList.AddRange(dissolveListA);
         tempList.AddRange(statusA);
+        tempList.AddRange(dissolveA);
         AllObj = tempList.ToArray();
+
+        rules = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().rules;
     }
     void Update()
     {
@@ -32,9 +38,13 @@ public class LightChange : MonoBehaviour
                 isLightOn = false;
                 ppChange.LightOff();
                 //加灰色
-                for(int i=0;i<AllObj .Length ; i++)
+                for (int i = 0; i < AllObj.Length; i++)
                 {
-                    AllObj[i].GetComponent<MouseFloatAndDrawLine  >().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "gray");
+                    if (AllObj[i] != null&&rules [AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey ("gray"))
+                    {
+                        AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "gray");
+                        AllObj[i].GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, typeof(Sprite));
+                    }
                 }
             }
             else
@@ -44,7 +54,11 @@ public class LightChange : MonoBehaviour
                 //加白色
                 for (int i = 0; i < AllObj.Length; i++)
                 {
-                    AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "white");
+                    if (AllObj[i] != null && rules[AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey("white"))
+                    {
+                        AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "white");
+                        AllObj[i].GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, typeof(Sprite));
+                    }
                 }
             }
 

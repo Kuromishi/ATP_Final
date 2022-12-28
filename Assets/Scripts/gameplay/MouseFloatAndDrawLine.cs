@@ -45,7 +45,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
 if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitobject)
         {
           this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 1);
-            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "dissolve"&& this.tag != "contrast")
+            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "contrast")
             {//左键将混合后的颜色加到主角身上
                 characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
             }else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")

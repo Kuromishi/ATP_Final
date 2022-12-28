@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class TalkButton : MonoBehaviour
 {
-    public GameObject uiButton;
+
+
     public GameObject messageUI;
+    public NPCStateSwitch npcSwitch;
+
+
+    [Header("NPC State")]
+    public GameObject uiButton;
+    public bool isGirlTalk;
+    public bool isContrastTalk;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +28,59 @@ public class TalkButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(uiButton.activeSelf && Input.GetKeyDown(KeyCode.E))
+        //bool isActive = uiButton.activeSelf;
+        //Debug.Log(isActive);
+
+        if (uiButton.activeSelf && Input.GetKeyDown(KeyCode.E))
         {
             messageUI.SetActive(true);
+            
         }
 
+
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        uiButton.SetActive(true);
-        //Debug.Log("Entered");
+        
+            if (other.GetComponentInParent<NPCGirl>() != null)
+            {
+                isGirlTalk = true;
+            }
+           
+            if (other.GetComponentInParent<NPCContrast>() != null)
+            {
+                isContrastTalk = true;
+            }
+
+           uiButton.SetActive(true);
+
+
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D other)
     {
-        uiButton.SetActive(false);
+        if (other.GetComponentInParent<NPCGirl>() != null)
+        {
+            isGirlTalk = true;
+        }
+
+        if (other.GetComponentInParent<NPCContrast>() != null)
+        {
+            isContrastTalk = true;
+        }
+
+        uiButton.SetActive(true);
+
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+
+            isGirlTalk = false;
+            isContrastTalk = false;
+            uiButton.SetActive(false);
+
     }
 }

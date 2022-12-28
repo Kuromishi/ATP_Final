@@ -29,13 +29,14 @@ public class DialogueSystem : MonoBehaviour
 
     void Awake()
     {
-        GetTextFromFile(textFile);
+        
     }
 
     private void OnEnable() //刚启用时  //OnEnable会在Start之前调用
     {
         //textLabel.text = textList[index];
         //index++;
+        GetTextFromFile(textFile);
 
         StartCoroutine(MovingTextUI());
         anim_NPC.SetBool("isTalking", true);

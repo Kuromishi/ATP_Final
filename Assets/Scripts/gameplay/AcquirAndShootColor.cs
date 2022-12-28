@@ -49,7 +49,9 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
         {"yellow", new Dictionary<string, string> { {"yellow","yellow" },{"red","orange" },{"transp","yellow" } }},
         {"white", new Dictionary<string, string> { {"white","white" },{"red","pink" },{"darkred","red" },{"brown","darkred" },{"blue","lightblue" },{"green","lightgreen" },{"darkblue","blue" },{"darkgreen","green" },{"black","gray" },{"transp","white" } }},
         {"brown", new Dictionary<string, string> { {"brown","brown" },{"white","darkred" },{"transp","brown" } }},
-        
+        {"orange",new Dictionary<string, string> { {"transp","orange" },{"orange","orange" } } },
+        {"purple",new Dictionary<string, string> { {"transp","purple" },{"purple","purple" } } },
+
         {"darkred", new Dictionary<string, string> { { "darkred", "darkred" }, { "gray", "brown" }, { "white", "red" }, { "transp", "darkred" } }},
         {"darkblue", new Dictionary<string, string> { { "darkblue", "darkblue" }, { "white", "blue" }, { "transp", "darkblue" } }},
         {"darkgreen", new Dictionary<string, string> { { "darkgreen", "darkgreen" }, { "white", "green" }, { "transp", "darkgreen" } }}
@@ -58,7 +60,7 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
 
     public Dictionary<string, string > huburules = new Dictionary<string, string >
     {
-        {"blue", "orange"},{"orange","blue"},{"yellow","purple"},{"purple","yellow"},{"red","green"},{"green","red"},{"black","white"},{"white","black"}
+        {"blue", "orange"},{"orange","blue"},{"yellow","purple"},{"purple","yellow"},{"red","green"},{"green","red"},{"gray","white"},{"white","gray"}
     };
     private void Update()
     {
@@ -90,7 +92,7 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
 
             }else { isListFinished1 = false; }
         }
-        Debug.Log(isListFinished1);
+        //Debug.Log(isListFinished1);
         if(isListFinished1)
         {
 foreach (GameObject j in gameObjects1)
