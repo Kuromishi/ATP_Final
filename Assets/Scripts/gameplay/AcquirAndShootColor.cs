@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,7 +14,7 @@ public class AcquirAndShootColor : MonoBehaviour
     //in the eventsystem object, make the rules of mix color, define the way to finish this level
     public Image image;
 
-    private GameObject[] allObj;
+    [SerializeField ]private GameObject[] allObj;
     public bool isFinish = false;
     private bool isFinishedTemp = true;
     private int sceneNum;
@@ -63,6 +64,14 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
     {
         {"blue", "orange"},{"orange","blue"},{"yellow","purple"},{"purple","yellow"},{"red","green"},{"green","red"},{"gray","white"},{"white","gray"}
     };
+
+    public void RemoveFromList(GameObject go)
+    {
+        var allObjectList = allObj.ToList();
+        allObjectList.Remove(go);
+        allObj = allObjectList.ToArray();
+    }
+
     private void Update()
     {
         string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
@@ -76,8 +85,6 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
                 
             }else { isFinishedTemp = false; };
         }
-        //Debug.Log(isFinishedTemp);
-        //Debug.Log(isFinish);
         if(isFinishedTemp)
         {
             isFinish = true;
@@ -188,6 +195,8 @@ foreach (GameObject j in gameObjects1)
             duration += Time.deltaTime;
             if (duration > 1.0f)
             {
+                GameManager.Instance.lightChange.RemoveFromList(i);
+                GameManager.Instance.acquirAndShootColor.RemoveFromList(i);
                 Destroy(i);
                 break;
             }
@@ -201,15 +210,23 @@ foreach (GameObject j in gameObjects1)
     {
         string name = string.Format("{0}/{1}", sceneNum, "transp");
         image.sprite = (Sprite)Resources.Load(name, typeof(Sprite));
-        
-        GameObject[] floorA= GameObject.FindGameObjectsWithTag("floor");
-        GameObject[] influA= GameObject.FindGameObjectsWithTag("influ");
-        
+
+        GameObject[] floorA = GameObject.FindGameObjectsWithTag("floor");
+        GameObject[] dissolveListA = GameObject.FindGameObjectsWithTag("dissolveList");
+        GameObject[] influA = GameObject.FindGameObjectsWithTag("influ");
+        GameObject[] dissolveA = GameObject.FindGameObjectsWithTag("dissolve");
+        tempList.AddRange(dissolveListA);
+        tempList.AddRange(dissolveA);
         tempList.AddRange(floorA);
         tempList.AddRange(influA);
         allObj = tempList.ToArray();
 
         sceneNum = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.acquirAndShootColor = this;
     }
     public string ReturnColor(string colorname1, string colorname2)
     {

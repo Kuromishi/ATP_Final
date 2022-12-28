@@ -6,6 +6,7 @@ public class BecomeFloor : MonoBehaviour
 {
     public Material mat;
     //放在场景中的物体而不是prefab上
+    
     void Start()
     {
         
@@ -32,6 +33,8 @@ public class BecomeFloor : MonoBehaviour
             duration += Time.deltaTime;
             if(duration > 1.0f)
             {
+                GameManager.Instance.lightChange.RemoveFromList(gameObject);
+                GameManager.Instance.acquirAndShootColor.RemoveFromList(gameObject);
                 Destroy(gameObject);
                 break;
             }

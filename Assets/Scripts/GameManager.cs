@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int value { get; set; } = 0;
     public GameObject line;
     public GameObject characterColor;
+    public LightChange lightChange;
+    public AcquirAndShootColor acquirAndShootColor;
     private void Awake()
     {
         if(Instance == null)

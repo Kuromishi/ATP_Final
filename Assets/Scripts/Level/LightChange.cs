@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,6 +33,18 @@ public class LightChange : MonoBehaviour
         rules = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().rules;
         sceneNum = SceneManager.GetActiveScene().buildIndex;
     }
+
+    private void Start()
+    {
+        GameManager.Instance.lightChange = this;
+    }
+
+    public void RemoveFromList(GameObject go)
+    {
+        var allObjectList = AllObj.ToList();
+        allObjectList.Remove(go);
+        AllObj =   allObjectList.ToArray(); 
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && inTrigger)
@@ -43,7 +56,7 @@ public class LightChange : MonoBehaviour
                 //加灰色
                 for (int i = 0; i < AllObj.Length; i++)
                 {
-                    if (AllObj[i] != null&&rules [AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey ("gray"))
+                    if (AllObj[i] != null&&rules [AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey ("gray")&& AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor!= AllObj[i].GetComponent<MouseFloatAndDrawLine>().correctColor)
                     {
                         AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "gray");
                         string name = string.Format("{0}/{1}", sceneNum, AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor);
@@ -58,7 +71,7 @@ public class LightChange : MonoBehaviour
                 //加白色
                 for (int i = 0; i < AllObj.Length; i++)
                 {
-                    if (AllObj[i] != null && rules[AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey("white"))
+                    if (AllObj[i] != null && rules[AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey("white") && AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor != AllObj[i].GetComponent<MouseFloatAndDrawLine>().correctColor)
                     {
                         AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "white");
                         string name = string.Format("{0}/{1}", sceneNum, AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor);
