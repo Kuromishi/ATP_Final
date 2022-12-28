@@ -9,7 +9,7 @@ public class LightChange : MonoBehaviour
     public float lightOnValue;
     public PPChange ppChange;
     private bool isLightOn = true;
-    private bool inTrigger = false;
+    public bool inTrigger = false;
     [SerializeField ] private GameObject[] AllObj;
 
     public Dictionary<string, Dictionary<string, string>> rules = new Dictionary<string, Dictionary<string, string>> { };
@@ -66,9 +66,27 @@ public class LightChange : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        inTrigger = true;
+        if (other.GetComponentInParent<CharacterComponent>() != null)
+        {
+            inTrigger = true;
+        }
+
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.GetComponentInParent<CharacterComponent>() != null)
+        {
+            inTrigger = true;
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        inTrigger = false;
+    }
+
 
 }

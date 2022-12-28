@@ -48,14 +48,16 @@ public class TalkButton : MonoBehaviour
             if (other.GetComponentInParent<NPCGirl>() != null)
             {
                 isGirlTalk = true;
-            }
+                uiButton.SetActive(true);
+             }
            
             if (other.GetComponentInParent<NPCContrast>() != null)
             {
                 isContrastTalk = true;
+                uiButton.SetActive(true);
             }
 
-           uiButton.SetActive(true);
+           
 
 
     }
@@ -65,14 +67,14 @@ public class TalkButton : MonoBehaviour
         if (other.GetComponentInParent<NPCGirl>() != null)
         {
             isGirlTalk = true;
+            uiButton.SetActive(true);
         }
 
         if (other.GetComponentInParent<NPCContrast>() != null)
         {
             isContrastTalk = true;
+            uiButton.SetActive(true);
         }
-
-        uiButton.SetActive(true);
 
     }
     private void OnTriggerExit2D(Collider2D other)
