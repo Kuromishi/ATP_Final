@@ -5,6 +5,7 @@ using System.Drawing;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AcquirAndShootColor : MonoBehaviour 
@@ -15,8 +16,8 @@ public class AcquirAndShootColor : MonoBehaviour
     private GameObject[] allObj;
     public bool isFinish = false;
     private bool isFinishedTemp = true;
+    private int sceneNum;
 
-    
     private List<GameObject> tempList = new List<GameObject>();
 
     [Header("群体消融列表") ]
@@ -64,7 +65,7 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
     };
     private void Update()
     {
-        string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
+        string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
         image.sprite = (Sprite)Resources.Load(name, typeof(Sprite));
 
         isFinishedTemp = true;
@@ -198,7 +199,8 @@ foreach (GameObject j in gameObjects1)
 
     private void Awake()
     {
-        image.sprite = (Sprite)Resources.Load("transp", typeof(Sprite));
+        string name = string.Format("{0}/{1}", sceneNum, "transp");
+        image.sprite = (Sprite)Resources.Load(name, typeof(Sprite));
         
         GameObject[] floorA= GameObject.FindGameObjectsWithTag("floor");
         GameObject[] influA= GameObject.FindGameObjectsWithTag("influ");
@@ -206,6 +208,8 @@ foreach (GameObject j in gameObjects1)
         tempList.AddRange(floorA);
         tempList.AddRange(influA);
         allObj = tempList.ToArray();
+
+        sceneNum = SceneManager.GetActiveScene().buildIndex;
     }
     public string ReturnColor(string colorname1, string colorname2)
     {

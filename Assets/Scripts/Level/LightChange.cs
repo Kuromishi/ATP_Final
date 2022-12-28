@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LightChange : MonoBehaviour
@@ -12,6 +13,7 @@ public class LightChange : MonoBehaviour
     public bool inTrigger = false;
     [SerializeField ] private GameObject[] AllObj;
 
+    private int sceneNum;
     public Dictionary<string, Dictionary<string, string>> rules = new Dictionary<string, Dictionary<string, string>> { };
 
     private void Awake()
@@ -28,6 +30,7 @@ public class LightChange : MonoBehaviour
         AllObj = tempList.ToArray();
 
         rules = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().rules;
+        sceneNum = SceneManager.GetActiveScene().buildIndex;
     }
     void Update()
     {
@@ -43,7 +46,8 @@ public class LightChange : MonoBehaviour
                     if (AllObj[i] != null&&rules [AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey ("gray"))
                     {
                         AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "gray");
-                        AllObj[i].GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, typeof(Sprite));
+                        string name = string.Format("{0}/{1}", sceneNum, AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor);
+                        AllObj[i].GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
                     }
                 }
             }
@@ -57,7 +61,8 @@ public class LightChange : MonoBehaviour
                     if (AllObj[i] != null && rules[AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor].ContainsKey("white"))
                     {
                         AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnColor(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, "white");
-                        AllObj[i].GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor, typeof(Sprite));
+                        string name = string.Format("{0}/{1}", sceneNum, AllObj[i].GetComponent<MouseFloatAndDrawLine>().FloorColor);
+                        AllObj[i].GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
                     }
                 }
             }

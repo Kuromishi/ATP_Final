@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MouseFloatAndDrawLine : MonoBehaviour
 {
@@ -11,22 +12,25 @@ public class MouseFloatAndDrawLine : MonoBehaviour
     public string correctColor;
     private bool isequel;
     private GameObject characterColor;//主角拖进来
+    private int sceneNum;
 
-    
+
     //private bool MouseClickCount;
 
     // Start is called before the first frame update
     void Start()
     {
+        sceneNum = SceneManager.GetActiveScene().buildIndex;
         //FloorColor.rgb = RGB;
         characterColor = GameManager.Instance.characterColor;
         //MouseClickCount = false;
         if(this.tag == "floor"||this.tag =="influ" || this.tag == "dissolve" || this.tag == "dissolveList")
         {
-              this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(FloorColor, typeof(Sprite));
+            string name = string.Format("{0}/{1}", sceneNum, FloorColor);
+            this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
         }
-        
 
+        
     }
 
     // Update is called once per frame
@@ -55,7 +59,7 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
             if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp" && this.tag != "contrast")
             {//右键将物体颜色染成主角的颜色
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
-                string name = string.Format("{0}", characterColor.GetComponent<CharacterComponent>().CharacterColor);
+                string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
                 
             }
