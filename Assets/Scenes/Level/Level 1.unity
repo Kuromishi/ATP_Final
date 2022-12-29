@@ -920,6 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -4376,6 +4377,7 @@ GameObject:
   - component: {fileID: 610702105}
   - component: {fileID: 610702107}
   - component: {fileID: 610702108}
+  - component: {fileID: 610702109}
   m_Layer: 2
   m_Name: face (2)
   m_TagString: Untagged
@@ -4480,6 +4482,26 @@ CircleCollider2D:
   m_Offset: {x: 39.062088, y: 83.31937}
   serializedVersion: 2
   m_Radius: 3.9281347
+--- !u!95 &610702109
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610702104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffeb954c88f38114f96b83c85c02ae96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &613564370
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,6 +4576,7 @@ GameObject:
   - component: {fileID: 698571010}
   - component: {fileID: 698571012}
   - component: {fileID: 698571013}
+  - component: {fileID: 698571014}
   m_Layer: 2
   m_Name: face (1)
   m_TagString: NPC
@@ -4658,6 +4681,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c962e631075b65042bb65b153092536b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &698571014
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698571009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02d0fe054d8fe5548941e5d37c36d4de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &715032749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5897,7 +5940,7 @@ CircleCollider2D:
   m_Radius: 9.803704
 --- !u!95 &876195206
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5914,7 +5957,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &876195207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6613,6 +6656,7 @@ GameObject:
   - component: {fileID: 986806717}
   - component: {fileID: 986806719}
   - component: {fileID: 986806720}
+  - component: {fileID: 986806721}
   m_Layer: 2
   m_Name: face (3)
   m_TagString: Untagged
@@ -6717,6 +6761,26 @@ CircleCollider2D:
   m_Offset: {x: -24.565283, y: 125.43438}
   serializedVersion: 2
   m_Radius: 8.583758
+--- !u!95 &986806721
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986806716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bbe84981b55d4c488af5f693322500f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &991457144
 GameObject:
   m_ObjectHideFlags: 0
