@@ -1821,54 +1821,6 @@ Transform:
   m_Father: {fileID: 1299003636}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
---- !u!1 &198029472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 198029473}
-  - component: {fileID: 198029474}
-  m_Layer: 0
-  m_Name: Scale
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &198029473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198029472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 831219284}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &198029474
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198029472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.09632182, y: -0.94877195}
-  serializedVersion: 2
-  m_Radius: 1.3524501
 --- !u!1001 &199005123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2832,7 +2784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341689671}
   - component: {fileID: 341689670}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3144,16 +3096,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387058210}
-  m_LocalRotation: {x: -0, y: -0, z: -0.022798702, w: 0.9997401}
-  m_LocalPosition: {x: -0.016, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5342714, w: 0.84531295}
+  m_LocalPosition: {x: 0.729, y: -0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1421659147}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.613}
---- !u!61 &387058212
-BoxCollider2D:
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -64.589}
+--- !u!60 &387058212
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3165,7 +3117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11070466, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3175,9 +3127,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.28502274, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.6397276, y: 0.73693067}
+      - {x: 0.2173595, y: 0.49502423}
+      - {x: -0.08571964, y: -0.8775668}
+      - {x: 0.32303423, y: -0.7268032}
+      - {x: 0.61229837, y: 0.20011735}
 --- !u!1 &406034985
 GameObject:
   m_ObjectHideFlags: 0
@@ -5378,7 +5334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 831219284}
   - component: {fileID: 831219283}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5410,7 +5366,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1419019698}
-  - {fileID: 198029473}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8564,9 +8519,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.5334535, y: -6.6810117}
+  m_Offset: {x: -6.8939834, y: -5.5283365}
   serializedVersion: 2
-  m_Radius: 13.503201
+  m_Radius: 12.2954645
 --- !u!1 &1241221835
 GameObject:
   m_ObjectHideFlags: 0
@@ -10256,7 +10211,7 @@ GameObject:
   - component: {fileID: 1419019698}
   - component: {fileID: 1419019699}
   - component: {fileID: 1419019700}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: The Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10318,7 +10273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10387,7 +10342,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4295115, y: 0}
+  m_Offset: {x: -0.18133384, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10398,7 +10353,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19123018, y: 1}
+  m_Size: {x: 0.22761637, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1421659147
 Transform:
@@ -10407,15 +10362,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421659145}
-  m_LocalRotation: {x: -0, y: -0, z: 0.19001871, w: 0.98178047}
-  m_LocalPosition: {x: -8.45, y: -2.9, z: 0.09876275}
+  m_LocalRotation: {x: -0, y: -0, z: 0.6809096, w: 0.7323676}
+  m_LocalPosition: {x: -11.49, y: -5.63, z: 0.09876275}
   m_LocalScale: {x: 3.325071, y: 5.879047, z: 2.2286}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 387058211}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.908}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 85.83}
 --- !u!114 &1421659148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13332,9 +13287,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.4523797, y: -6.030101}
+  m_Offset: {x: -5.049106, y: -4.122264}
   serializedVersion: 2
-  m_Radius: 15.683694
+  m_Radius: 13.6847105
 --- !u!4 &1962165112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4376590986640306130, guid: 09bc236d226bb7f43a3f24a6a920cd53, type: 3}

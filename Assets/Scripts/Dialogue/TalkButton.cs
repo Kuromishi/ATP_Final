@@ -24,7 +24,7 @@ public class TalkButton : MonoBehaviour
     public bool isToFindTalk;
     public bool isBodyTalk;
 
-
+    private bool IsBodyAround;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +45,14 @@ public class TalkButton : MonoBehaviour
             messageUI.SetActive(true);
             
         }
-
-
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            IsBodyAround = true;
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            IsBodyAround = false;
+        }
 
     }
 
@@ -57,36 +63,42 @@ public class TalkButton : MonoBehaviour
             if (other.GetComponentInParent<NPCGirl>() != null)
             {
                 isGirlTalk = true;
-             }
+            uiButton.SetActive(true);
+        }
            
             if (other.GetComponentInParent<NPCContrast>() != null)
             {
                 isContrastTalk = true;
-            }
+                uiButton.SetActive(true);
+             }
 
              if (other.GetComponentInParent<NPC_Nonsense_1>() != null)
              {
-                 isNonsense1Talk = true;
-             }
+                isNonsense1Talk = true;
+                uiButton.SetActive(true);
+              }
 
             if (other.GetComponentInParent<NPC_Nonsense_2>() != null)
             {
                  isNonsense2Talk = true;
-            }
+                  uiButton.SetActive(true);
+              }
 
             if(other.GetComponentInParent<ToFind>() != null)
             {
                  isToFindTalk = true;
+                 uiButton.SetActive(true);
              }
 
         if (other.GetComponentInParent<Body>() != null)
         {
             isBodyTalk = true;
+            uiButton.SetActive(true);
         }
 
-        uiButton.SetActive(true);
+        
     
-             if (other.GetComponentInParent<SmthToGet>() != null && Input.GetKeyDown(KeyCode.E))
+             if (other.GetComponentInParent<SmthToGet>() != null && IsBodyAround)
              {
                      Destroy(theThing);
                     toFind.SetActive(false);
@@ -100,36 +112,41 @@ public class TalkButton : MonoBehaviour
         if (other.GetComponentInParent<NPCGirl>() != null)
         {
             isGirlTalk = true;
+            uiButton.SetActive(true);
         }
 
         if (other.GetComponentInParent<NPCContrast>() != null)
         {
             isContrastTalk = true;
+            uiButton.SetActive(true);
         }
         if (other.GetComponentInParent<NPC_Nonsense_1>() != null)
         {
             isNonsense1Talk = true;
+            uiButton.SetActive(true);
         }
 
         if (other.GetComponentInParent<NPC_Nonsense_2>() != null)
         {
             isNonsense2Talk = true;
-            
+            uiButton.SetActive(true);
+
         }
 
         if (other.GetComponentInParent<ToFind>() != null)
         {
             isToFindTalk = true;
+            uiButton.SetActive(true);
         }
 
         if (other.GetComponentInParent<Body>() != null)
         {
             isBodyTalk = true;
+            uiButton.SetActive(true);
         }
 
-        uiButton.SetActive(true);
 
-        if (other.GetComponentInParent<SmthToGet>() != null && Input.GetKeyDown(KeyCode.E))
+        if (other.GetComponentInParent<SmthToGet>() != null && IsBodyAround)
         {
             Destroy(theThing);
             toFind.SetActive(false);

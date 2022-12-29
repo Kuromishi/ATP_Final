@@ -109,6 +109,7 @@ public class NPCStateSwitch : MonoBehaviour
 
                 talkButton.uiButton= uiButton_Nobody;
                 dialogueSystem.textFile = textFile_Nobody;
+
                 break;
         }
     }
