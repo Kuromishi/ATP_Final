@@ -37,11 +37,12 @@ public class DialogueSystem : MonoBehaviour
         //textLabel.text = textList[index];
         //index++;
         GetTextFromFile(textFile);
+        talkButton.uiButton.SetActive(false);
 
         StartCoroutine(MovingTextUI());
         anim_NPC.SetBool("isTalking", true);
         characterDetective.isTalking = true;
-        talkButton.uiButton.SetActive(false);
+        
     }
 
     void Update()
