@@ -9,7 +9,6 @@ public class NPCStateSwitch : MonoBehaviour
     public GameObject uiButton_ContrastNPC;
     public GameObject uiButton_Nonsense1;
     public GameObject uiButton_Nonsense2;
-    public GameObject uiButton_Nobody;
     public GameObject uiButton_Body;
 
     [Header("Textfile")]
@@ -17,7 +16,6 @@ public class NPCStateSwitch : MonoBehaviour
     public TextAsset textFile_ContrastNPC;
     public TextAsset textFile_Nonsense1;
     public TextAsset textFile_Nonsense2;
-    public TextAsset textFile_Nobody;
     public TextAsset textFile_ToFind;
     public TextAsset textFile_Body;
 
@@ -105,12 +103,12 @@ public class NPCStateSwitch : MonoBehaviour
                 dialogueSystem.textFile = textFile_Body;
                 break;
 
-            case NPCState.Nobody:
+            //case NPCState.Nobody:
 
-                talkButton.uiButton= uiButton_Nobody;
-                dialogueSystem.textFile = textFile_Nobody;
+            //    talkButton.uiButton= uiButton_Nobody;
+            //    dialogueSystem.textFile = textFile_Nobody;
 
-                break;
+            //    break;
         }
     }
 }

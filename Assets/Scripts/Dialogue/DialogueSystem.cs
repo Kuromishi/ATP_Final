@@ -36,7 +36,11 @@ public class DialogueSystem : MonoBehaviour
     {
         //textLabel.text = textList[index];
         //index++;
-        GetTextFromFile(textFile);
+        if(textFile)
+        {
+            GetTextFromFile(textFile);
+        }
+        
         talkButton.uiButton.SetActive(false);
 
         StartCoroutine(MovingTextUI());

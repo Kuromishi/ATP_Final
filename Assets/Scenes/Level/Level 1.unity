@@ -5361,7 +5361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831219282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.121099, y: -10.569247, z: 0.062587425}
+  m_LocalPosition: {x: -11.35, y: -10.38, z: 0.062587425}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7076,7 +7076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 100541199}
-  textFile: {fileID: 4900000, guid: bbfd1afa9bdd5e34c85d8022e6abf590, type: 3}
+  textFile: {fileID: 0}
   index: 0
   textSpeed: 0.05
   anim_NPC: {fileID: 876195206}
@@ -7373,7 +7373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1127405207
 Transform:
   m_ObjectHideFlags: 0
@@ -11637,13 +11637,11 @@ MonoBehaviour:
   uiButton_ContrastNPC: {fileID: 985909393}
   uiButton_Nonsense1: {fileID: 155263247}
   uiButton_Nonsense2: {fileID: 1435704656}
-  uiButton_Nobody: {fileID: 2116419}
   uiButton_Body: {fileID: 1263821594}
   textFile_Girl: {fileID: 4900000, guid: dddacf26176c7a64cadc7720cc1c94b7, type: 3}
   textFile_ContrastNPC: {fileID: 4900000, guid: d5eca27a60f3ed245b97eb700aa52969, type: 3}
   textFile_Nonsense1: {fileID: 4900000, guid: f07693c1babf96a4c9894c4fce330e67, type: 3}
   textFile_Nonsense2: {fileID: 4900000, guid: 956a4b3bc49365c44b0672945b990f6a, type: 3}
-  textFile_Nobody: {fileID: 4900000, guid: bbfd1afa9bdd5e34c85d8022e6abf590, type: 3}
   textFile_ToFind: {fileID: 4900000, guid: 5564f958566f89b42b79aee7fc17e488, type: 3}
   textFile_Body: {fileID: 4900000, guid: c478f10a6e2ef4144ac904aa62fd0926, type: 3}
   talkButton: {fileID: 2144102417}
@@ -13287,9 +13285,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.049106, y: -4.122264}
+  m_Offset: {x: -5.2664065, y: -3.4274943}
   serializedVersion: 2
-  m_Radius: 13.6847105
+  m_Radius: 12.956753
 --- !u!4 &1962165112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4376590986640306130, guid: 09bc236d226bb7f43a3f24a6a920cd53, type: 3}
