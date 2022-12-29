@@ -47,7 +47,6 @@ ScriptedImporter:
     flipbookRows: 0
     flipbookColumns: 0
     ignorePngGamma: 0
-    cookieMode: 0
     filterMode: 1
     aniso: 1
     mipBias: 0
@@ -90,7 +89,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
-    spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: hat
@@ -486,7 +484,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -523, y: -334}
-    spritePosition: {x: 0, y: 0}
   - name: glass
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -891,7 +888,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -562, y: 114}
-    spritePosition: {x: 0, y: 0}
   - name: righthand
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1208,7 +1204,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 176, y: -291}
-    spritePosition: {x: 0, y: 0}
   - name: body
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1602,7 +1597,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -606, y: -517}
-    spritePosition: {x: 0, y: 0}
   - name: rightleg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1952,7 +1946,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 8, y: -418}
-    spritePosition: {x: 0, y: 0}
   - name: leftleg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2302,7 +2295,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -936, y: 915}
-    spritePosition: {x: 0, y: 0}
   characterData:
     bones:
     - name: bone_1

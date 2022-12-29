@@ -11,9 +11,11 @@ public class TalkButton : MonoBehaviour
 
     [Header("Puzzle")]
     public GameObject theThing;
+    public GameObject eHead;
     public GameObject toFind;
     public GameObject puzzleDoor;
     public GameObject bodyFound;
+    public GameObject bodyToHead;
 
     [Header("NPC State")]
     public GameObject uiButton;
@@ -101,9 +103,11 @@ public class TalkButton : MonoBehaviour
              if (other.GetComponentInParent<SmthToGet>() != null && IsBodyAround)
              {
                      Destroy(theThing);
+                    Destroy(eHead);
                     toFind.SetActive(false);
                      puzzleDoor.SetActive(false);
                     bodyFound.SetActive(true);
+                    bodyToHead.SetActive(true);
              }
     }
 
@@ -149,9 +153,11 @@ public class TalkButton : MonoBehaviour
         if (other.GetComponentInParent<SmthToGet>() != null && IsBodyAround)
         {
             Destroy(theThing);
+            Destroy(eHead);
             toFind.SetActive(false);
             puzzleDoor.SetActive(false);
             bodyFound.SetActive(true);
+            bodyToHead.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelDetect : MonoBehaviour
@@ -22,7 +24,7 @@ public class LevelDetect : MonoBehaviour
 
     private void Start()
     {
-        //videoTime = videoBomb.GetComponent<VideoPlayer>().clip.length;
+        videoTime = videoBomb.GetComponent<VideoPlayer>().clip.length;
     }
 
     private void Update()
