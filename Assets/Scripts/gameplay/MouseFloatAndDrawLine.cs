@@ -14,6 +14,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
     private GameObject characterColor;//主角拖进来
     private int sceneNum;
 
+    public GameObject redHeart;
 
     //private bool MouseClickCount;
 
@@ -49,20 +50,23 @@ public class MouseFloatAndDrawLine : MonoBehaviour
 if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitobject)
         {
           this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 1);
-            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "contrast")
+            if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "contrast" && this.tag != "heart")
             {//左键将混合后的颜色加到主角身上
                 characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
             }else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")
                 {
                     characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnContrastColor(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 }
-            if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp" && this.tag != "contrast")
+            if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp" && this.tag != "contrast" && this.tag != "heart")
             {//右键将物体颜色染成主角的颜色
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
                 string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
                 
-            }
+            }else if(Input.GetMouseButtonDown(1) && this.tag == "heart"&& characterColor.GetComponent<CharacterComponent>().CharacterColor == "red")
+                {
+                    redHeart.SetActive(true);
+                }
             
         }else { this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 0); }
         

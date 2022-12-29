@@ -23,7 +23,7 @@ public class CharacterComponent : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        //CharacterColor.rgb = 0;
+        
         CharacterColor = "transp";
     }
 

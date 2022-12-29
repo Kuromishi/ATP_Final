@@ -33,7 +33,10 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
     public List<GameObject> gameObjects5 = new List<GameObject>();
     private bool isListFinished5 = true;
 
-
+    public GameObject blood;
+    private Animator anim_knife;
+    private Animator anim_blood;
+    public GameObject knife;
 
 
     public Material mat;
@@ -89,6 +92,8 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
         {
             isFinish = true;
             //这里引用动画脚本
+            anim_blood.SetBool("moving", true);
+            anim_knife.SetBool("moving", true);
         }
 
         //1
@@ -227,6 +232,12 @@ foreach (GameObject j in gameObjects1)
     private void Start()
     {
         GameManager.Instance.acquirAndShootColor = this;
+        if(knife != null)
+        {
+anim_knife = knife.GetComponent<Animator>();
+        anim_blood = blood.GetComponent<Animator>();
+        }
+        
     }
     public string ReturnColor(string colorname1, string colorname2)
     {

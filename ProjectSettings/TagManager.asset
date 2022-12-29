@@ -11,6 +11,8 @@ TagManager:
   - dissolve
   - dissolveList
   - contrast
+  - NPC
+  - heart
   layers:
   - Default
   - TransparentFX
