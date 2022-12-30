@@ -8,6 +8,7 @@ public class character_45du : MonoBehaviour
     private Collider2D coll;
     private Animator anim;
     private float horizontalMove;
+    public bool canMove;
 
     public float speed;
     // Start is called before the first frame update
@@ -25,9 +26,13 @@ public class character_45du : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        GroundMovement();
+        if(canMove)
+        {
+            GroundMovement();
 
-        SwitchAnim();
+            SwitchAnim();
+        }
+
     }
     void GroundMovement()
     {
