@@ -28,10 +28,15 @@ public class TalkButton : MonoBehaviour
 
     private bool IsBodyAround;
 
+    [Header("Audio")]
+    public AudioSource faceTalk;
+    public AudioClip faceTalkClip;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
 
@@ -72,6 +77,8 @@ public class TalkButton : MonoBehaviour
             {
                 isContrastTalk = true;
                 uiButton.SetActive(true);
+                  faceTalk.clip = faceTalkClip;
+                  faceTalk.Play();
              }
 
              if (other.GetComponentInParent<NPC_Nonsense_1>() != null)
