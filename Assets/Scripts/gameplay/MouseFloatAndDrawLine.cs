@@ -16,6 +16,10 @@ public class MouseFloatAndDrawLine : MonoBehaviour
 
     public GameObject redHeart;
 
+    public AudioSource source;
+    public AudioClip shoot;
+    public AudioClip absorb;
+
     //private bool MouseClickCount;
 
     // Start is called before the first frame update
@@ -30,8 +34,8 @@ public class MouseFloatAndDrawLine : MonoBehaviour
             string name = string.Format("{0}/{1}", sceneNum, FloorColor);
             this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
         }
+        source = gameObject.AddComponent<AudioSource>();
 
-        
     }
 
     // Update is called once per frame
@@ -52,19 +56,23 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
           this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 1);
             if(Input .GetMouseButtonDown(0)&&this .tag !="influ" && this.tag != "contrast" && this.tag != "heart")
             {//左键将混合后的颜色加到主角身上
-                characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
+                    source.PlayOneShot(absorb, 1F);
+                    characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
             }else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")
                 {
+                    source.PlayOneShot(absorb, 1F);
                     characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnContrastColor(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 }
             if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp" && this.tag != "contrast" && this.tag != "heart")
             {//右键将物体颜色染成主角的颜色
+                    source.PlayOneShot(shoot, 1F);
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
                 string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
                 
             }else if(Input.GetMouseButtonDown(1) && this.tag == "heart"&& characterColor.GetComponent<CharacterComponent>().CharacterColor == "red"&&GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().isFinish ==true )
                 {
+                    source.PlayOneShot(shoot, 1F);
                     redHeart.SetActive(true);
                 }
             
