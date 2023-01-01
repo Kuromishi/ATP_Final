@@ -130,3 +130,6 @@ MonoBehaviour:
   source: {fileID: 0}
   shoot: {fileID: 8300000, guid: 6d5b9fb45282f1d4aa9cff35565c7362, type: 3}
   absorb: {fileID: 8300000, guid: 3885ccf1ee0b89a4681cee73a1d7f363, type: 3}
+  particleAbsorb: {fileID: 5850695749538099329, guid: ef179a5af280de046a44b2931b041003, type: 3}
+  gunPoint: {fileID: 0}
+  T: 0

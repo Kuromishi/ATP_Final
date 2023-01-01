@@ -11,7 +11,7 @@ public class DrawLine : MonoBehaviour
     [SerializeField] private Material material;
     [SerializeField] private Vector2 tiling;
     [SerializeField] private int mainTexProperty;
-    [SerializeField] private Transform player;
+    public Transform player;
     private float lineLen;
     [SerializeField] private float density = 2f;
     private Vector3 MousePosition;

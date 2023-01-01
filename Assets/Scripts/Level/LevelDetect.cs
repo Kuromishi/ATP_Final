@@ -11,7 +11,6 @@ public class LevelDetect : MonoBehaviour
 
     public GameObject button_Level1;
     public GameObject button_Level2;
-    public GameObject button_System;
 
     [Header("Video1")]
     public GameObject videoBomb;
@@ -114,10 +113,6 @@ public class LevelDetect : MonoBehaviour
             button_Level2.SetActive(true);
         }
 
-        if (other.GetComponentInParent<SystemEnter>() != null && IsGameFinished.Instance.isLevel2Finished)
-        {
-            button_System.SetActive(true);
-        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -130,16 +125,11 @@ public class LevelDetect : MonoBehaviour
         {
             button_Level2.SetActive(true);
         }
-        if (other.GetComponentInParent<SystemEnter>() != null && IsGameFinished.Instance.isLevel2Finished)
-        {
-            button_System.SetActive(true);
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         button_Level1.SetActive(false);
         button_Level2.SetActive(false);
-        button_System.SetActive(false);
     }
 }

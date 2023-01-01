@@ -20,6 +20,9 @@ public class MouseFloatAndDrawLine : MonoBehaviour
     public AudioClip shoot;
     public AudioClip absorb;
 
+    public GameObject particleAbsorb;
+    private float pSpeed=2.0f;
+
     //private bool MouseClickCount;
 
     // Start is called before the first frame update
@@ -58,7 +61,15 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
             {//左键将混合后的颜色加到主角身上
                     source.PlayOneShot(absorb, 1F);
                     characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
-            }else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")
+
+                    //instantiate particle
+                    //Instantiate(particleAbsorb, GameManager.Instance.line.GetComponent<DrawLine>().hitobject.transform.position, Quaternion.identity);
+                    //particleAbsorb.transform.position = Vector3.MoveTowards(particleAbsorb.transform.position, GameManager.Instance.line.GetComponent<DrawLine>().player.position, pSpeed*Time.deltaTime);
+                    //particleAbsorb.transform.position = new Vector3(Mathf.Lerp(particleAbsorb.transform.position.x, GameManager.Instance.line.GetComponent<DrawLine>().player.position.x, pSpeed * Time.deltaTime), Mathf.Lerp(particleAbsorb.transform.position.y, GameManager.Instance.line.GetComponent<DrawLine>().player.position.y, pSpeed * Time.deltaTime), 0);
+
+
+                }
+                else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")
                 {
                     source.PlayOneShot(absorb, 1F);
                     characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnContrastColor(characterColor.GetComponent<CharacterComponent>().CharacterColor);
