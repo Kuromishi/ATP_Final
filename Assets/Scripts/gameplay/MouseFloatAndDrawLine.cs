@@ -21,6 +21,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
     public AudioClip absorb;
 
     public GameObject particleAbsorb;
+    public GameObject particleShoot;
     private float pSpeed=2.0f;
 
     //private bool MouseClickCount;
@@ -63,8 +64,8 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
                     characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().ReturnColor(FloorColor, characterColor.GetComponent<CharacterComponent>().CharacterColor);
 
                     //instantiate particle
-                    //Instantiate(particleAbsorb, GameManager.Instance.line.GetComponent<DrawLine>().hitobject.transform.position, Quaternion.identity);
-                    //particleAbsorb.transform.position = Vector3.MoveTowards(particleAbsorb.transform.position, GameManager.Instance.line.GetComponent<DrawLine>().player.position, pSpeed*Time.deltaTime);
+                    Instantiate(particleAbsorb, GameManager.Instance.line.GetComponent<DrawLine>().hitobject.transform.position, Quaternion.identity);
+                    //particleAbsorb.transform.position = Vector2.MoveTowards(particleAbsorb.transform.position, new Vector2(0,0), pSpeed*Time.deltaTime);
                     //particleAbsorb.transform.position = new Vector3(Mathf.Lerp(particleAbsorb.transform.position.x, GameManager.Instance.line.GetComponent<DrawLine>().player.position.x, pSpeed * Time.deltaTime), Mathf.Lerp(particleAbsorb.transform.position.y, GameManager.Instance.line.GetComponent<DrawLine>().player.position.y, pSpeed * Time.deltaTime), 0);
 
 
@@ -72,6 +73,7 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
                 else if(Input.GetMouseButtonDown(0) && this.tag == "contrast")
                 {
                     source.PlayOneShot(absorb, 1F);
+                    Instantiate(particleAbsorb, GameManager.Instance.line.GetComponent<DrawLine>().hitobject.transform.position, Quaternion.identity);
                     characterColor.GetComponent<CharacterComponent>().CharacterColor = GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().ReturnContrastColor(characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 }
             if(Input.GetMouseButtonDown(1)&&this .tag !="status"&& characterColor.GetComponent<CharacterComponent>().CharacterColor!="transp" && this.tag != "contrast" && this.tag != "heart")
@@ -80,11 +82,15 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
                     FloorColor = characterColor.GetComponent<CharacterComponent>().CharacterColor;
                 string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
-                
-            }else if(Input.GetMouseButtonDown(1) && this.tag == "heart"&& characterColor.GetComponent<CharacterComponent>().CharacterColor == "red"&&GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().isFinish ==true )
+
+                    Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().player.position, Quaternion.identity);
+
+                }
+                else if(Input.GetMouseButtonDown(1) && this.tag == "heart"&& characterColor.GetComponent<CharacterComponent>().CharacterColor == "red"&&GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().isFinish ==true )
                 {
                     source.PlayOneShot(shoot, 1F);
                     redHeart.SetActive(true);
+                    Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().player.position, Quaternion.identity);
                 }
             
         }else { this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 0); }

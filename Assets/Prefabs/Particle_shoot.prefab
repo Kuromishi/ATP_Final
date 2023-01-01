@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5850695749538099332}
   - component: {fileID: 5850695749538099331}
   - component: {fileID: 5850695749538099330}
-  - component: {fileID: -6504663567603824532}
+  - component: {fileID: -1955092942021219279}
   m_Layer: 0
-  m_Name: Particle_Absorb
+  m_Name: Particle_shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5187969
+        value: 0.53383446
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -146,7 +146,7 @@ TrailRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.34587097
+        value: 0.30827332
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -158,8 +158,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.15471691, b: 0.15471691, a: 1}
-      key1: {r: 1, g: 0.52308637, b: 0, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0.4816449, b: 0, a: 1}
       key2: {r: 1, g: 0.9364519, b: 0, a: 0}
       key3: {r: 0.48111778, g: 1, b: 0.390566, a: 0}
       key4: {r: 0.39999998, g: 0.7050703, b: 1, a: 0}
@@ -194,7 +194,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &-6504663567603824532
+--- !u!114 &-1955092942021219279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5850695749538099329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5583dc82d3921f4ab966058aef3a534, type: 3}
+  m_Script: {fileID: 11500000, guid: 664aa5e401ed4214abc85c610e93665d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pSpeed: 10
