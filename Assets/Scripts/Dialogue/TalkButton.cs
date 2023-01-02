@@ -30,7 +30,7 @@ public class TalkButton : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource faceTalk;
-    public AudioClip faceTalkClip;
+    public AudioClip bodyClip;
 
 
     // Start is called before the first frame update
@@ -77,8 +77,8 @@ public class TalkButton : MonoBehaviour
             {
                 isContrastTalk = true;
                 uiButton.SetActive(true);
-                  faceTalk.clip = faceTalkClip;
-                  faceTalk.Play();
+                  //faceTalk.clip = faceTalkClip;
+                  //faceTalk.Play();
              }
 
              if (other.GetComponentInParent<NPC_Nonsense_1>() != null)
@@ -111,7 +111,11 @@ public class TalkButton : MonoBehaviour
              {
                      Destroy(theThing);
                     Destroy(eHead);
-                    toFind.SetActive(false);
+
+                     faceTalk.clip = bodyClip;
+                      faceTalk.Play();
+
+                      toFind.SetActive(false);
                      puzzleDoor.SetActive(false);
                     bodyFound.SetActive(true);
                     bodyToHead.SetActive(true);
@@ -161,6 +165,10 @@ public class TalkButton : MonoBehaviour
         {
             Destroy(theThing);
             Destroy(eHead);
+
+            faceTalk.clip = bodyClip;
+            faceTalk.Play();
+
             toFind.SetActive(false);
             puzzleDoor.SetActive(false);
             bodyFound.SetActive(true);
