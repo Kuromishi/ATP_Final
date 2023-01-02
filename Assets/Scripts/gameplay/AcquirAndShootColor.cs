@@ -65,7 +65,8 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
 
     public Dictionary<string, string > huburules = new Dictionary<string, string >
     {
-        {"blue", "orange"},{"orange","blue"},{"yellow","purple"},{"purple","yellow"},{"red","green"},{"green","red"},{"gray","white"},{"white","gray"}
+        {"blue", "orange"},{"orange","blue"},{"yellow","purple"},{"purple","yellow"},{"red","green"},{"green","red"},{"gray","white"},{"white","gray"},
+        {"darkred","darkgreen"},{"darkgreen","darkred"},{"lightgreen","pink"},{"pink","lightgreen"}
     };
 
     public void RemoveFromList(GameObject go)
