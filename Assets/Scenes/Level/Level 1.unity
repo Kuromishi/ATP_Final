@@ -2391,7 +2391,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2034559409}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4665,7 +4665,7 @@ RectTransform:
   - {fileID: 518004698}
   - {fileID: 1615631868}
   m_Father: {fileID: 2034559409}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5824,7 +5824,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2034559409}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13530,7 +13530,7 @@ RectTransform:
   m_Children:
   - {fileID: 160304825}
   m_Father: {fileID: 2034559409}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15074,7 +15074,7 @@ RectTransform:
   m_GameObject: {fileID: 1615631867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.46135947, y: 0.82321006, z: 0.82321006}
+  m_LocalScale: {x: 0.4, y: 0.82321006, z: 0.82321006}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 509139485}
@@ -15105,7 +15105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 022c1b8a7781d78459fb2b7a240bc678, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4806f5e2838926946bb0b62f55f86d4c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18071,7 +18071,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2034559409}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18691,11 +18691,11 @@ RectTransform:
   m_Children:
   - {fileID: 841339256}
   - {fileID: 325947442}
-  - {fileID: 509139485}
-  - {fileID: 260191059}
   - {fileID: 667536146}
   - {fileID: 2002606089}
   - {fileID: 1440025865}
+  - {fileID: 509139485}
+  - {fileID: 260191059}
   m_Father: {fileID: 1317252319}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
