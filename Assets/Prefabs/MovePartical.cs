@@ -14,7 +14,7 @@ public class MovePartical : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, GameManager.Instance.line.GetComponent<DrawLine>().player.position, pSpeed * Time.deltaTime);
-        Destroy(gameObject, 0.6f);
+        transform.position = Vector2.MoveTowards(transform.position, GameManager.Instance.line.GetComponent<DrawLine>().liziPos.position, pSpeed * Time.deltaTime);
+        Destroy(gameObject, 0.4f);
     }
 }

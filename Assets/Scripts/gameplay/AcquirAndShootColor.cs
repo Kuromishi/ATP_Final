@@ -92,8 +92,12 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
         {
             isFinish = true;
             //这里引用动画脚本
-            anim_blood.SetBool("moving", true);
+            if(knife != null)
+            {
+anim_blood.SetBool("moving", true);
             anim_knife.SetBool("moving", true);
+            }
+            
         }
 
         //1

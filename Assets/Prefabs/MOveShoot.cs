@@ -15,6 +15,6 @@ public class MOveShoot : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, GameManager.Instance.line.GetComponent<DrawLine>().hitobject.transform.position, pSpeed * Time.deltaTime);
-        Destroy(gameObject, 0.6f);
+        Destroy(gameObject, 0.4f);
     }
 }

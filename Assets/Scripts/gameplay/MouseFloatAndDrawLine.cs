@@ -83,14 +83,14 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
                 string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
                 this.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load(name, typeof(Sprite));
 
-                    Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().player.position, Quaternion.identity);
+                    Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().liziPos.position, Quaternion.identity);
 
                 }
                 else if(Input.GetMouseButtonDown(1) && this.tag == "heart"&& characterColor.GetComponent<CharacterComponent>().CharacterColor == "red"&&GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().isFinish ==true )
                 {
                     source.PlayOneShot(shoot, 1F);
                     redHeart.SetActive(true);
-                    Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().player.position, Quaternion.identity);
+                    Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().liziPos.position, Quaternion.identity);
                 }
             
         }else { this.GetComponent<SpriteRenderer>().material.SetFloat("_Highlighted", 0); }
