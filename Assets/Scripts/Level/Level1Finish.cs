@@ -20,13 +20,14 @@ public class Level1Finish : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().isFinish==true)
         {
             IsGameFinished.Instance.isLevel1Finished = true;
-
-            Invoke("PlayVideo1", 1);
+            
+            //Invoke("PlayVideo1", 1);
+            StartCoroutine(PlayVideo1());
 
         }
     }
@@ -36,23 +37,27 @@ public class Level1Finish : MonoBehaviour
         SceneManager.LoadScene("Level 1");
     }
 
-    public void PlayVideo1()
+    IEnumerator PlayVideo1()
     {
+        yield return new WaitForSeconds (1);
         Music.Stop();
         videoBomb.SetActive(true);
         isVideoBombStarted = true;
-
-        if (isVideoBombStarted)
-        {
-            currentTime1 += Time.deltaTime;
+        
+        //if (isVideoBombStarted)
+        //{
+        currentTime1 += Time.fixedDeltaTime;
+            Debug.Log(currentTime1);
             if (currentTime1 >= videoTime1)
             {
                 //videoEndEvent
                 videoBomb.SetActive(false);
                 currentTime1 = 0;
                 isVideoBombStarted = false;
+
                 SceneManager.LoadScene(4);
+                yield return null;
             }
-        }
+        //}
     }
 }
