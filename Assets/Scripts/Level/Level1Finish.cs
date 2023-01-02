@@ -11,6 +11,7 @@ public class Level1Finish : MonoBehaviour
     double videoTime1;
     double currentTime1;
     private bool isVideoBombStarted;
+    public AudioSource Music;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class Level1Finish : MonoBehaviour
 
     public void PlayVideo1()
     {
+        Music.Stop();
         videoBomb.SetActive(true);
         isVideoBombStarted = true;
 
