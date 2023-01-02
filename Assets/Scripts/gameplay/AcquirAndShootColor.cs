@@ -14,6 +14,7 @@ public class AcquirAndShootColor : MonoBehaviour
     //in the eventsystem object, make the rules of mix color, define the way to finish this level
     public Image image;
     public Button skip;
+    
 
     [SerializeField ]private GameObject[] allObj;
     public bool isFinish = false;
@@ -260,6 +261,7 @@ anim_knife = knife.GetComponent<Animator>();
     public void OnEnable()
     {
         skip.onClick.AddListener(skipF);
+        
     }
     void skipF()
     {

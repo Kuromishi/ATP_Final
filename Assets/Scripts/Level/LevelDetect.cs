@@ -24,17 +24,27 @@ public class LevelDetect : MonoBehaviour
     double currentTime2;
     private bool isVideoLetterStarted;
 
+
+    private bool setLevel=false;
+
     private void Start()
     {
         videoTime1 = videoBomb.GetComponent<VideoPlayer>().clip.length;
         videoTime2 = videoLetter.GetComponent<VideoPlayer>().clip.length;
         character45Degree.canMove = true;
     }
+    private void Update()
+    {
+     if(Input.GetKeyDown(KeyCode.E))
+        {
+            setLevel = true;
+        }
+    }
 
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.E) && button_Level1.activeSelf)
+        if (setLevel  && button_Level1.activeSelf)
         {
             if (IsGameFinished.Instance.isLevel1Finished == false)
             {
@@ -42,11 +52,12 @@ public class LevelDetect : MonoBehaviour
             }
             else
             {
-                StartCoroutine(PlayVideo1());
+                PlayVideo1();
+                setLevel = false;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && button_Level2.activeSelf)
+        if (setLevel && button_Level2.activeSelf)
         {
             if (IsGameFinished.Instance.isLevel2Finished == false)
             {
@@ -54,14 +65,15 @@ public class LevelDetect : MonoBehaviour
             }
             else if (IsGameFinished.Instance.isLevel2Finished)
             {
-                StartCoroutine(PlayVideo2());
-               
+        
+                PlayVideo2();
+                setLevel = false;
             }
         }
     }
-    IEnumerator PlayVideo1()
+    public void PlayVideo1()
     {
-        yield return new WaitForSeconds(1);
+
         videoBomb.SetActive(true);
         isVideoBombStarted = true;
         character45Degree.canMove = false;
@@ -77,14 +89,13 @@ public class LevelDetect : MonoBehaviour
             character45Degree.canMove = true;
             currentTime1 = 0;
             isVideoBombStarted = false;
-            yield return null;
+            
         }
         //}
     }
 
-    IEnumerator PlayVideo2()
+    public void PlayVideo2()
     {
-        yield return new WaitForSeconds(1);
         videoLetter.SetActive(true);
         isVideoLetterStarted = true;
         character45Degree.canMove = false;
@@ -101,10 +112,9 @@ public class LevelDetect : MonoBehaviour
             currentTime2 = 0;
             isVideoLetterStarted = false;
 
-            yield return null;
         }
-        //}
     }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {

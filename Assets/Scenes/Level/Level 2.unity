@@ -4035,6 +4035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoLetter: {fileID: 1770425334}
   Music: {fileID: 1447030421}
+  redHeart: {fileID: 854015596}
 --- !u!4 &766304734
 Transform:
   m_ObjectHideFlags: 0

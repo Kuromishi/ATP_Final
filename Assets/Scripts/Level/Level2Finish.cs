@@ -12,6 +12,7 @@ public class Level2Finish : MonoBehaviour
     double currentTime2;
     private bool isVideoLetterStarted;
     public AudioSource Music;
+    public GameObject redHeart;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class Level2Finish : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().isFinish == true)
+        if (redHeart.activeSelf)
         {
             IsGameFinished.Instance.isLevel2Finished = true;
 
