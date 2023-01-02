@@ -31,7 +31,8 @@ public class LevelDetect : MonoBehaviour
         character45Degree.canMove = true;
     }
 
-    private void Update()
+
+    private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.E) && button_Level1.activeSelf)
         {
@@ -41,23 +42,7 @@ public class LevelDetect : MonoBehaviour
             }
             else
             {
-                //play video
-                Video1Active();
-                
-                if (isVideoBombStarted)
-                {
-                    currentTime1 += Time.deltaTime;
-                    if (currentTime1 >= videoTime1)
-                    {
-                        //videoEndEvent
-                        videoBomb.SetActive(false);
-                        character45Degree.canMove = true;
-                        currentTime1 = 0;
-                        isVideoBombStarted = false;
-                    }
-                }
-
-
+                StartCoroutine(PlayVideo1());
             }
         }
 
@@ -69,36 +54,56 @@ public class LevelDetect : MonoBehaviour
             }
             else if (IsGameFinished.Instance.isLevel2Finished)
             {
-                Video2Actice();
-                
-                if (isVideoLetterStarted)
-                {
-                    currentTime2 += Time.deltaTime;
-                    if (currentTime2 >= videoTime2)
-                    {
-                        //videoEndEvent
-                        videoLetter.SetActive(false);
-                        character45Degree.canMove = true;
-                        currentTime2 = 0;
-                        isVideoLetterStarted = false;
-                    }
-                }
+                StartCoroutine(PlayVideo2());
+               
             }
         }
     }
-
-    public void Video1Active()
+    IEnumerator PlayVideo1()
     {
+        yield return new WaitForSeconds(1);
         videoBomb.SetActive(true);
         isVideoBombStarted = true;
         character45Degree.canMove = false;
+
+        //if (isVideoBombStarted)
+        //{
+        currentTime1 += Time.fixedDeltaTime;
+        //Debug.Log(currentTime1);
+        if (currentTime1 >= videoTime1)
+        {
+            //videoEndEvent
+            videoBomb.SetActive(false);
+            character45Degree.canMove = true;
+            currentTime1 = 0;
+            isVideoBombStarted = false;
+            yield return null;
+        }
+        //}
     }
 
-    public void Video2Actice()
+    IEnumerator PlayVideo2()
     {
+        yield return new WaitForSeconds(1);
         videoLetter.SetActive(true);
         isVideoLetterStarted = true;
         character45Degree.canMove = false;
+
+        //if (isVideoBombStarted)
+        //{
+        currentTime2 += Time.fixedDeltaTime;
+        //Debug.Log(currentTime1);
+        if (currentTime2 >= videoTime2)
+        {
+            //videoEndEvent
+            videoLetter.SetActive(false);
+            character45Degree.canMove = true;
+            currentTime2 = 0;
+            isVideoLetterStarted = false;
+
+            yield return null;
+        }
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
