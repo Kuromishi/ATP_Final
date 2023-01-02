@@ -17,6 +17,7 @@ public class startHUD : MonoBehaviour
     [SerializeField] private GameObject LoginButton;
     [SerializeField] private GameObject errorLog;
     public GameObject vipClubPanel;
+    public bool isNoah = false;
 
     [Header("Blankspace")]
     [SerializeField] private GameObject username;
@@ -69,6 +70,7 @@ public class startHUD : MonoBehaviour
     {
         if(currentUsername == "noah001" && currentPassword == "qwer2690")
         {
+            isNoah = true;
             Debug.Log("Noah log in.");
             vipClubPanel.SetActive(true);
             vipMenu.SetActive(false);
@@ -77,6 +79,7 @@ public class startHUD : MonoBehaviour
 
         else if (currentPassword == "87654321")
         {
+            isNoah = false;
             Debug.Log("Player log in.");
             vipClubPanel.SetActive(true);
             vipMenu.SetActive(false);

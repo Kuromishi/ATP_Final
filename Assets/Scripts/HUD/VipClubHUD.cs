@@ -7,6 +7,10 @@ using TMPro;
 public class VipClubHUD : MonoBehaviour
 {
     public startHUD startHUD;
+
+    [Header("Noah")]
+    [SerializeField] private GameObject noahPage;
+
     [Header("Begin Puzzle")]
     [SerializeField] private GameObject beginPuzzlePage;
     [SerializeField] private TextMeshProUGUI helloText;
@@ -42,10 +46,12 @@ public class VipClubHUD : MonoBehaviour
     [Header("Error")]
     [SerializeField] private GameObject errorPage;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        helloText.text = "Hi," + startHUD.currentUsername + "!";
+        CheckNoah();
 
         firstAnswer.onEndEdit.AddListener(delegate { _firstAnswer = firstAnswer.text; });
         answer1_1.onEndEdit.AddListener(delegate { _answer1_1 = answer1_1.text; });
@@ -64,7 +70,7 @@ public class VipClubHUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckNoah();
     }
 
     public void checkFirstSubmit()
@@ -103,6 +109,22 @@ public class VipClubHUD : MonoBehaviour
         else
         {
             errorPage.SetActive(true);
+        }
+    }
+
+    public void CheckNoah()
+    {
+        if (startHUD.isNoah)
+        {
+            noahPage.SetActive(true);
+            beginPuzzlePage.SetActive(false);
+            helloText.text = "Hi,Noah!";
+        }
+        else
+        {
+            beginPuzzlePage.SetActive(true);
+            noahPage.SetActive(false);
+            helloText.text = "Hi," + startHUD.currentUsername + "!";
         }
     }
 }
