@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloorColor: 
-  correctColor: 
+  correctColor: 0
   redHeart: {fileID: 0}
   source: {fileID: 0}
   shoot: {fileID: 8300000, guid: 6d5b9fb45282f1d4aa9cff35565c7362, type: 3}

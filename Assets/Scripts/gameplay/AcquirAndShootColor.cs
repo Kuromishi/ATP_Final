@@ -220,13 +220,13 @@ foreach (GameObject j in gameObjects1)
         string name = string.Format("{0}/{1}", sceneNum, "transp");
         image.sprite = (Sprite)Resources.Load(name, typeof(Sprite));
 
-        GameObject[] floorA = GameObject.FindGameObjectsWithTag("floor");
+        
         GameObject[] dissolveListA = GameObject.FindGameObjectsWithTag("dissolveList");
         GameObject[] influA = GameObject.FindGameObjectsWithTag("influ");
         GameObject[] dissolveA = GameObject.FindGameObjectsWithTag("dissolve");
         tempList.AddRange(dissolveListA);
         tempList.AddRange(dissolveA);
-        tempList.AddRange(floorA);
+        
         tempList.AddRange(influA);
         allObj = tempList.ToArray();
 
