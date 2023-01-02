@@ -47,7 +47,7 @@ public class Level1Finish : MonoBehaviour
         //if (isVideoBombStarted)
         //{
         currentTime1 += Time.fixedDeltaTime;
-            Debug.Log(currentTime1);
+            //Debug.Log(currentTime1);
             if (currentTime1 >= videoTime1)
             {
                 //videoEndEvent

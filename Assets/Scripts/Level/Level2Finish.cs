@@ -11,6 +11,7 @@ public class Level2Finish : MonoBehaviour
     double videoTime2;
     double currentTime2;
     private bool isVideoLetterStarted;
+    public AudioSource Music;
 
     void Start()
     {
@@ -18,14 +19,15 @@ public class Level2Finish : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (GameObject.Find("EventSystem").GetComponent<AcquirAndShootColor>().isFinish == true)
         {
             IsGameFinished.Instance.isLevel2Finished = true;
 
-            Invoke("PlayVideo2", 1);
-            
+            //Invoke("PlayVideo2", 1);
+            StartCoroutine(PlayVideo2());
+
         }
     }
 
@@ -33,24 +35,27 @@ public class Level2Finish : MonoBehaviour
     {
         SceneManager.LoadScene("Level 2");
     }
-
-    public void PlayVideo2()
+    IEnumerator PlayVideo2()
     {
+        yield return new WaitForSeconds(1);
+        Music.Stop();
         videoLetter.SetActive(true);
         isVideoLetterStarted = true;
 
-        if (isVideoLetterStarted)
+        //if (isVideoBombStarted)
+        //{
+        currentTime2 += Time.fixedDeltaTime;
+        //Debug.Log(currentTime1);
+        if (currentTime2 >= videoTime2)
         {
-            currentTime2 += Time.deltaTime;
-            if (currentTime2 >= videoTime2)
-            {
-                //videoEndEvent
-                videoLetter.SetActive(false);
-                currentTime2 = 0;
-                isVideoLetterStarted = false;
-                SceneManager.LoadScene(4);
-            }
+            //videoEndEvent
+            videoLetter.SetActive(false);
+            currentTime2 = 0;
+            isVideoLetterStarted = false;
+
+            SceneManager.LoadScene(4);
+            yield return null;
         }
-        
+        //}
     }
 }
