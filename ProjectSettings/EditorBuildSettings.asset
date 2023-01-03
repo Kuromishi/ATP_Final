@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level/Corridor.unity
     guid: 225088ee34dfc754eb2e6fb8cb4cd489
+  - enabled: 1
+    path: Assets/Scenes/Vectory.unity
+    guid: fefda92d57010b146a6fdde69cca23ee
   m_configObjects: {}

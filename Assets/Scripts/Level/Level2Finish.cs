@@ -54,7 +54,7 @@ public class Level2Finish : MonoBehaviour
             currentTime2 = 0;
             isVideoLetterStarted = false;
 
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
             yield return null;
         }
         //}
