@@ -42,6 +42,7 @@ public class VipClubHUD : MonoBehaviour
 
     [Header("End")]
     [SerializeField] private GameObject endPage;
+    private bool isPassAll = false;
 
     [Header("Error")]
     [SerializeField] private GameObject errorPage;
@@ -51,7 +52,7 @@ public class VipClubHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CheckNoah();
+        //CheckNoah();
 
         firstAnswer.onEndEdit.AddListener(delegate { _firstAnswer = firstAnswer.text; });
         answer1_1.onEndEdit.AddListener(delegate { _answer1_1 = answer1_1.text; });
@@ -59,8 +60,8 @@ public class VipClubHUD : MonoBehaviour
         answer2_1.onEndEdit.AddListener(delegate { _answer2_1 = answer2_1.text; });
         answer2_2.onEndEdit.AddListener(delegate { _answer2_2 = answer2_2.text; });
         answer2_3.onEndEdit.AddListener(delegate { _answer2_3 = answer2_3.text; });
-        answer2_4.onEndEdit.AddListener(delegate { _answer2_3 = answer2_4.text; });
-        answer2_5.onEndEdit.AddListener(delegate { _answer2_3 = answer2_5.text; });
+        answer2_4.onEndEdit.AddListener(delegate { _answer2_4 = answer2_4.text; });
+        answer2_5.onEndEdit.AddListener(delegate { _answer2_5 = answer2_5.text; });
 
         fisrtSubmit.onClick.AddListener(checkFirstSubmit);
         submit1.onClick.AddListener(checkSubmit1);
@@ -70,7 +71,11 @@ public class VipClubHUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckNoah();
+        //CheckNoah();
+
+        fisrtSubmit.onClick.AddListener(checkFirstSubmit);
+        submit1.onClick.AddListener(checkSubmit1);
+        submit2.onClick.AddListener(checkSubmit2);
     }
 
     public void checkFirstSubmit()
@@ -79,6 +84,7 @@ public class VipClubHUD : MonoBehaviour
         {
             beginPuzzlePage.SetActive(false);
             puzzleOnePage.SetActive(true);
+            Debug.Log("0812");
         }
         else
         {
@@ -105,6 +111,7 @@ public class VipClubHUD : MonoBehaviour
         {
             puzzleTwoPage.SetActive(false);
             endPage.SetActive(true);
+            isPassAll = true;
         }
         else
         {
@@ -118,13 +125,21 @@ public class VipClubHUD : MonoBehaviour
         {
             noahPage.SetActive(true);
             beginPuzzlePage.SetActive(false);
-            helloText.text = "Hi,Noah!";
+            helloText.text = "Hi,noah001!";
         }
         else
         {
-            beginPuzzlePage.SetActive(true);
-            noahPage.SetActive(false);
-            helloText.text = "Hi," + startHUD.currentUsername + "!";
+            if (isPassAll)
+            {
+                endPage.SetActive(true);
+            }
+            else
+            {
+                beginPuzzlePage.SetActive(true);
+                noahPage.SetActive(false);
+                helloText.text = "Hi," + startHUD.currentUsername + "!";
+            }
+            
         }
     }
 }

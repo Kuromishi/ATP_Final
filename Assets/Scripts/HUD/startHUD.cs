@@ -6,6 +6,8 @@ using TMPro;
 
 public class startHUD : MonoBehaviour
 {
+    public VipClubHUD vipClubHUD;
+    
     [Header ("button")]
     [SerializeField] private GameObject play;
     [SerializeField] private GameObject credits;
@@ -23,6 +25,10 @@ public class startHUD : MonoBehaviour
     [SerializeField] private GameObject username;
     [SerializeField] private GameObject password;
 
+    [Header("if Tutorial")]
+    [SerializeField] private Button yesTutorial;
+    [SerializeField] private Button noTutorial;
+
     private TMP_InputField _username;
     private TMP_InputField _password;
     [HideInInspector] public string currentUsername;
@@ -38,6 +44,10 @@ public class startHUD : MonoBehaviour
         credits.GetComponent<Button>().onClick.AddListener(CreditButton);
         vipClub.GetComponent<Button>().onClick.AddListener(VipClubButton);
         LoginButton.GetComponent<Button>().onClick.AddListener(canLogin);
+        LoginButton.GetComponent<Button>().onClick.AddListener(vipClubHUD.CheckNoah);
+
+        yesTutorial.GetComponent<Button>().onClick.AddListener(_yesTutorial);
+        noTutorial.GetComponent<Button>().onClick.AddListener(_noTutorial);
 
         _username.onEndEdit.AddListener(delegate{ currentUsername = _username.text; });
         _password.onEndEdit.AddListener(delegate { currentPassword = _password.text; });
@@ -77,7 +87,7 @@ public class startHUD : MonoBehaviour
             errorLog.SetActive(false);
         }
 
-        else if (currentPassword == "87654321")
+        else if (currentPassword == "87654321" && currentUsername != "noah001")
         {
             isNoah = false;
             Debug.Log("Player log in.");
@@ -93,6 +103,16 @@ public class startHUD : MonoBehaviour
         }
 
         //Debug.Log("username:"+currentUsername+",password:"+currentPassword);
+    }
+
+    public void _yesTutorial()
+    {
+
+    }
+
+    public void _noTutorial()
+    {
+
     }
 
 }
