@@ -14,6 +14,7 @@ public class AcquirAndShootColor : MonoBehaviour
     //in the eventsystem object, make the rules of mix color, define the way to finish this level
     public Image image;
     public Button skip;
+    public GameObject animCamera;
 
     AudioSource source;
     public AudioClip bleed;
@@ -104,9 +105,12 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
             if(knife != null)
             {
                 //º”“Ù–ß
+
+                XiechengCount();
                 anim_blood.SetBool("moving", true);
             anim_knife.SetBool("moving", true);
-            source.PlayOneShot (bleed ,0.7F);
+
+                
             }  
         }
 
@@ -275,5 +279,29 @@ anim_knife = knife.GetComponent<Animator>();
     void skipF()
     {
         SceneManager.LoadScene(4);
+    }
+    int countXiecheng = 0;
+    void XiechengCount()
+    {
+        if(countXiecheng == 0)
+        {
+StartCoroutine(SwitchCamera());
+        }
+        countXiecheng++;
+    }
+
+    IEnumerator SwitchCamera()
+    {
+        animCamera.SetActive(true);
+
+        Invoke("HAHA", 0.37f);
+
+        yield return new WaitForSeconds(2);
+
+       animCamera.SetActive(false);
+    }
+    public void HAHA()
+    {
+        source.PlayOneShot(bleed, 0.7F);
     }
 }
