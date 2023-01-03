@@ -94,13 +94,16 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
         if(isFinishedTemp)
         {
             isFinish = true;
-            //这里引用动画脚本
+            
+        }
+        if(isFinish)
+        {
             if(knife != null)
             {
+                //加音效
 anim_blood.SetBool("moving", true);
             anim_knife.SetBool("moving", true);
-            }
-            
+            }  
         }
 
         //1
