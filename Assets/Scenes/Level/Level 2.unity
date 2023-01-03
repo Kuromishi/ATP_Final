@@ -7755,6 +7755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 823957261}
   skip: {fileID: 0}
+  bleed: {fileID: 8300000, guid: b8d10246ca8a43842a648e3fe8a52f95, type: 3}
   allObj: []
   isFinish: 0
   gameObjects1:

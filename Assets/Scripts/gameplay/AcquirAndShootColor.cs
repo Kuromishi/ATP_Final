@@ -14,7 +14,10 @@ public class AcquirAndShootColor : MonoBehaviour
     //in the eventsystem object, make the rules of mix color, define the way to finish this level
     public Image image;
     public Button skip;
-    
+
+    AudioSource source;
+    public AudioClip bleed;
+
 
     [SerializeField ]private GameObject[] allObj;
     public bool isFinish = false;
@@ -101,8 +104,9 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
             if(knife != null)
             {
                 //º”“Ù–ß
-anim_blood.SetBool("moving", true);
+                anim_blood.SetBool("moving", true);
             anim_knife.SetBool("moving", true);
+            source.PlayOneShot (bleed ,0.7F);
             }  
         }
 
@@ -241,6 +245,8 @@ foreach (GameObject j in gameObjects1)
 
     private void Start()
     {
+        source = gameObject.AddComponent<AudioSource>();
+        source.clip = bleed;
         GameManager.Instance.acquirAndShootColor = this;
         if(knife != null)
         {
