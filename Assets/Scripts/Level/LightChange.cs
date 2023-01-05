@@ -14,6 +14,8 @@ public class LightChange : MonoBehaviour
     public bool inTrigger = false;
     [SerializeField ] private GameObject[] AllObj;
 
+    public GameObject iconE;
+
     private int sceneNum;
     public Dictionary<string, Dictionary<string, string>> rules = new Dictionary<string, Dictionary<string, string>> { };
 
@@ -89,6 +91,7 @@ public class LightChange : MonoBehaviour
         if (other.GetComponentInParent<CharacterComponent>() != null)
         {
             inTrigger = true;
+            iconE.SetActive(true);
         }
 
     }
@@ -97,6 +100,7 @@ public class LightChange : MonoBehaviour
         if (other.GetComponentInParent<CharacterComponent>() != null)
         {
             inTrigger = true;
+            iconE.SetActive(true);
         }
 
     }
@@ -104,6 +108,7 @@ public class LightChange : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         inTrigger = false;
+        iconE.SetActive(false);
     }
 
 
