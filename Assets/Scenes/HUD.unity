@@ -7900,10 +7900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1960, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -15895,7 +15895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hey there! We're Ourobors Studio, a game development studio that's all
+  m_text: "Hey there! We're Ouroboros Studio, a game development studio that's all
     about making the world a happier place through the power of games. Our team loves
     creating fun, exciting experiences that will keep you entertained and engaged.
     \n\nWant to know more about us? Head on over to our itch.io page to learn more

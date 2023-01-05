@@ -53,7 +53,7 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
         {"blue", new Dictionary<string, string> { {"red","purple" },{ "orange", "brown" },{ "blue","blue" },{"gray","darkblue" },{"white","lightblue" },{"transp","blue" }, { "yellow", "green" } } },
         {"lightblue", new Dictionary<string, string> { { "lightblue", "lightblue" }, { "yellow", "lightgreen" },{ "gray","blue" },{"black","darkblue" },{"transp","lightblue" } }},
         {"lightred", new Dictionary<string, string> { { "lightred", "lightred" },{"gray","red" },{"black","darkred" },{"transp","lightred" },{ "purple", "pink" } }},
-        {"green", new Dictionary<string, string> { {"red","yellow" },{"green","green" },{"gray","lightgreen" },{"white","lightgreen" },{"transp","green" } }},
+        {"green", new Dictionary<string, string> { {"red","yellow" },{"green","green" },{"gray","darkgreen" },{"white","lightgreen" },{"transp","green" } }},
         {"lightgreen", new Dictionary<string, string> { {"gray","green" },{"lightgreen","lightgreen" },{"black","darkgreen" },{"transp","lightgreen" } }},
         {"black", new Dictionary<string, string> { { "red", "brown" },{"white","gray" },{"black","black" },{"lightgreen","darkgreen" },{"lightblue","darkblue" },{"transp","black" } }},
         {"gray", new Dictionary<string, string> { {"gray","gray" }, { "pink", "darkred" }, { "lightred", "red" }, { "darkred", "brown" }, { "red","darkred" },{"blue","darkblue" },{"lightblue","blue" },{"green","darkgreen" },{"lightgreen","green" },{"transp","gray" } }},
