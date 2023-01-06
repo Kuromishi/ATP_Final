@@ -125,6 +125,7 @@ public class VipClubHUD : MonoBehaviour
         {
             noahPage.SetActive(true);
             beginPuzzlePage.SetActive(false);
+            endPage.SetActive(false);
             helloText.text = "Hi,noah001!";
         }
         else
@@ -132,6 +133,8 @@ public class VipClubHUD : MonoBehaviour
             if (isPassAll)
             {
                 endPage.SetActive(true);
+                noahPage.SetActive(false);
+                helloText.text = "Hi," + startHUD.currentUsername + "!";
             }
             else
             {
