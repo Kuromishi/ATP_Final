@@ -514,7 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!95 &898353018
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -531,7 +531,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &963330034
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -970,7 +969,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159863498}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 87e46b35097465c46a2f8804983d631f, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 99f6902c59093e5419938a45b924ea4d, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1101,7 +1100,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374339953}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 95de35eab6e26074096318c9066737e7, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 87e46b35097465c46a2f8804983d631f, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -2162,8 +2161,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2961103838524550738}
   m_Bounds:
-    m_Center: {x: 0.9613141, y: -10.459576, z: 0}
-    m_Extent: {x: 1.5300794, y: 1.11763, z: 0}
+    m_Center: {x: 0.9613123, y: -10.459576, z: 0}
+    m_Extent: {x: 1.5300796, y: 1.1176305, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2318,8 +2317,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 7239176428999393594}
   m_Bounds:
-    m_Center: {x: 0.86558974, y: -10.134026, z: 0}
-    m_Extent: {x: 1.4969149, y: 2.7434497, z: 0}
+    m_Center: {x: 0.8655877, y: -10.134025, z: 0}
+    m_Extent: {x: 1.4969149, y: 2.74345, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2370,8 +2369,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 705808460427290671}
   m_Bounds:
-    m_Center: {x: 0.9481051, y: -10.359926, z: 0}
-    m_Extent: {x: 3.2769403, y: 5.005, z: 0}
+    m_Center: {x: 0.9481015, y: -10.359923, z: 0}
+    m_Extent: {x: 3.2769408, y: 5.005001, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2427,8 +2426,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5393409555758236637}
   m_Bounds:
-    m_Center: {x: 1.6052299, y: -4.020671, z: 0}
-    m_Extent: {x: 3.8951297, y: 1.545295, z: 0}
+    m_Center: {x: 1.6052263, y: -4.0206676, z: 0}
+    m_Extent: {x: 3.8951302, y: 1.5452952, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -2594,7 +2593,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8043507060758414077}
   m_Bounds:
-    m_Center: {x: 0.876488, y: -10.12262, z: 0}
+    m_Center: {x: 0.87648416, y: -10.12262, z: 0}
     m_Extent: {x: 1.5175397, y: 2.733305, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2951,8 +2950,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3048906348688886547}
   m_Bounds:
-    m_Center: {x: 1.1091458, y: -11.425314, z: 0}
-    m_Extent: {x: 1.4755697, y: 1.4585948, z: 0}
+    m_Center: {x: 1.109144, y: -11.425312, z: 0}
+    m_Extent: {x: 1.47557, y: 1.4585948, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
