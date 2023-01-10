@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using System.IO;
 
 public class Level1Finish : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class Level1Finish : MonoBehaviour
     double currentTime1;
     private bool isVideoBombStarted;
     public AudioSource Music;
-
+    VideoPlayer vp1;
     // Start is called before the first frame update
     void Start()
     {
-        videoTime1 = videoBomb.GetComponent<VideoPlayer>().clip.length;
+        vp1= videoBomb.GetComponent<VideoPlayer>();
+        vp1.url = Path.Combine(UnityEngine.Application.streamingAssetsPath, "Video_Bomb.mp4");
+        videoTime1 = vp1.clip.length;
     }
 
     // Update is called once per frame

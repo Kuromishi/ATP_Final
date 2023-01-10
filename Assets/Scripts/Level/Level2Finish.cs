@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
+using System.IO;
 
 public class Level2Finish : MonoBehaviour
 {
@@ -13,10 +15,12 @@ public class Level2Finish : MonoBehaviour
     private bool isVideoLetterStarted;
     public AudioSource Music;
     public GameObject redHeart;
-
+    VideoPlayer vp2;
     void Start()
     {
-        videoTime2 = videoLetter.GetComponent<VideoPlayer>().clip.length;
+        vp2= videoLetter.GetComponent<VideoPlayer>();
+        vp2.url = Path.Combine(UnityEngine.Application.streamingAssetsPath, "Video1.mp4");
+        videoTime2 = vp2.clip.length;
     }
 
     // Update is called once per frame

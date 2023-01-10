@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class LevelDetect : MonoBehaviour
 {
@@ -23,14 +24,19 @@ public class LevelDetect : MonoBehaviour
     double videoTime2;
     double currentTime2;
     private bool isVideoLetterStarted;
-
+    VideoPlayer vp1;
+    VideoPlayer vp2;
 
     private bool setLevel=false;
 
     private void Start()
     {
-        videoTime1 = videoBomb.GetComponent<VideoPlayer>().clip.length;
-        videoTime2 = videoLetter.GetComponent<VideoPlayer>().clip.length;
+        vp1 = videoBomb.GetComponent<VideoPlayer>();
+        vp1.url = Path.Combine(UnityEngine.Application.streamingAssetsPath, "Video_Bomb.mp4");
+        videoTime1 = vp1.clip.length;
+        vp2 = videoLetter.GetComponent<VideoPlayer>();
+        vp2.url = Path.Combine(UnityEngine.Application.streamingAssetsPath, "Video1.mp4");
+        videoTime2 = vp2.clip.length;
         character45Degree.canMove = true;
     }
     private void Update()

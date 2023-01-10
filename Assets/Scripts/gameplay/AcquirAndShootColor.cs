@@ -84,6 +84,11 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
 
     private void Update()
     {
+        //×÷±×´úÂë
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            isFinish = true;
+        }
         string name = string.Format("{0}/{1}", sceneNum, characterColor.GetComponent<CharacterComponent>().CharacterColor);
         image.sprite = (Sprite)Resources.Load(name, typeof(Sprite));
 
