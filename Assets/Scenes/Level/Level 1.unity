@@ -12805,7 +12805,7 @@ GameObject:
   - component: {fileID: 1281441971}
   - component: {fileID: 1281441974}
   - component: {fileID: 1281441973}
-  - component: {fileID: 1281441972}
+  - component: {fileID: 1281441977}
   - component: {fileID: 1281441976}
   m_Layer: 2
   m_Name: face (5)
@@ -12831,18 +12831,6 @@ Transform:
   m_Father: {fileID: 1164656011}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.582}
---- !u!114 &1281441972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281441970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c962e631075b65042bb65b153092536b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &1281441973
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12931,6 +12919,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1281441977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281441970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4633ea328abd44bb7ba1b0f26a59c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1298710560
 GameObject:
   m_ObjectHideFlags: 0
@@ -16322,6 +16322,7 @@ MonoBehaviour:
   textFile_Nonsense2: {fileID: 4900000, guid: 956a4b3bc49365c44b0672945b990f6a, type: 3}
   textFile_ToFind: {fileID: 4900000, guid: 5564f958566f89b42b79aee7fc17e488, type: 3}
   textFile_Body: {fileID: 4900000, guid: c478f10a6e2ef4144ac904aa62fd0926, type: 3}
+  textFile_In: {fileID: 4900000, guid: d05c11356372816419f3128d687350c3, type: 3}
   talkButton: {fileID: 2144102417}
   dialogueSystem: {fileID: 1077659151}
   State: 0
@@ -21202,6 +21203,7 @@ MonoBehaviour:
   isNonsense2Talk: 0
   isToFindTalk: 0
   isBodyTalk: 0
+  isINTalk: 0
   faceTalk: {fileID: 426590992}
   bodyClip: {fileID: 8300000, guid: 9c02986ba85c4ad4b8e050d3c854afce, type: 3}
 --- !u!50 &3675778335993474978
