@@ -26,6 +26,7 @@ public class TalkButton : MonoBehaviour
     public bool isNonsense2Talk;
     public bool isToFindTalk;
     public bool isBodyTalk;
+    public bool isINTalk;
 
     private bool IsBodyAround;
 
@@ -123,6 +124,12 @@ public class TalkButton : MonoBehaviour
 
                      guideArrow.SetActive(true);
              }
+
+             if(other.GetComponentInParent<NPCIN>()!=null)
+        {
+            isINTalk = true;
+            uiButton.SetActive(true);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -179,6 +186,11 @@ public class TalkButton : MonoBehaviour
 
             guideArrow.SetActive(true);
         }
+        if (other.GetComponentInParent<NPCIN>() != null)
+        {
+            isINTalk = true;
+            uiButton.SetActive(true);
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -189,6 +201,7 @@ public class TalkButton : MonoBehaviour
         isNonsense2Talk = false;
         isToFindTalk = false;
         isBodyTalk = false;
+        isINTalk = false;
         uiButton.SetActive(false);
 
     }

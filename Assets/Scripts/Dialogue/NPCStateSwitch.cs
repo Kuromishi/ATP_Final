@@ -18,7 +18,7 @@ public class NPCStateSwitch : MonoBehaviour
     public TextAsset textFile_Nonsense2;
     public TextAsset textFile_ToFind;
     public TextAsset textFile_Body;
-
+    public TextAsset textFile_In;
 
     [Header("Other scripts")]
     public TalkButton talkButton;
@@ -32,7 +32,8 @@ public class NPCStateSwitch : MonoBehaviour
         Nonsense1,
         Nonsense2,
         ToFind,
-        Body
+        Body,
+        In
     }
 
     [Header("NPC State")]
@@ -57,6 +58,9 @@ public class NPCStateSwitch : MonoBehaviour
 
         else if (talkButton.isBodyTalk)
             State = NPCState.Body;
+
+        else if (talkButton.isINTalk)
+            State = NPCState.In;
 
         else
             State = NPCState.Nobody;
@@ -102,6 +106,11 @@ public class NPCStateSwitch : MonoBehaviour
                 talkButton.uiButton = uiButton_Body;
                 dialogueSystem.textFile = textFile_Body;
                 break;
+
+            case NPCState.In:
+
+                dialogueSystem.textFile = textFile_In;
+                    break;
 
             //case NPCState.Nobody:
 
