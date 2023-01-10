@@ -16,6 +16,7 @@ public class TalkButton : MonoBehaviour
     public GameObject puzzleDoor;
     public GameObject bodyFound;
     public GameObject bodyToHead;
+    public GameObject guideArrow;
 
     [Header("NPC State")]
     public GameObject uiButton;
@@ -119,6 +120,8 @@ public class TalkButton : MonoBehaviour
                      puzzleDoor.SetActive(false);
                     bodyFound.SetActive(true);
                     bodyToHead.SetActive(true);
+
+                     guideArrow.SetActive(true);
              }
     }
 
@@ -173,6 +176,8 @@ public class TalkButton : MonoBehaviour
             puzzleDoor.SetActive(false);
             bodyFound.SetActive(true);
             bodyToHead.SetActive(true);
+
+            guideArrow.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
