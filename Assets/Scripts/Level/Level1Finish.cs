@@ -16,7 +16,9 @@ public class Level1Finish : MonoBehaviour
     VideoPlayer vp1;
     public List<GameObject> leftDissolve;
     public GameObject character;
-    
+    public GameObject bodyToHead;
+    public TalkButton talkButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,13 +35,15 @@ public class Level1Finish : MonoBehaviour
                 leftDissolve.Remove(obj);
             }
         }
-        if(leftDissolve .Count == 0)
+        if(leftDissolve .Count == 0 && bodyToHead.activeSelf && talkButton.isBodyTalk)
         {
+            //拿到身体并且对完话之后
+
             IsGameFinished.Instance.isLevel1LeftFinished = true;
         }
         if (IsGameFinished.Instance.isLevel1LeftFinished == true)
         {
-            character.transform.position = new Vector3(-3.2f, -0.5f, character.transform.position.z);
+            character.transform.position = new Vector3(-12.5f, -5.7f, character.transform.position.z);
             foreach (GameObject obj in leftDissolve)
             {
                 GameManager.Instance.lightChange.RemoveFromList(obj);
