@@ -1192,6 +1192,7 @@ MonoBehaviour:
   skip: {fileID: 1951982792}
   animCamera: {fileID: 0}
   bleed: {fileID: 0}
+  whiteheartAnim: {fileID: 0}
   allObj: []
   isFinish: 0
   gameObjects1:
@@ -1220,6 +1221,7 @@ MonoBehaviour:
   - {fileID: 915878425}
   gameObjects4: []
   gameObjects5: []
+  gameObjects6: []
   blood: {fileID: 0}
   knife: {fileID: 0}
   mat: {fileID: 2100000, guid: a3f90276f9929db47ad58a928eca39fd, type: 2}
@@ -1236,6 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3799,6 +3802,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325947441}
   m_CullTransparentMesh: 1
+--- !u!1 &337438720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7317060675883840861, guid: a2b1d393f4bbac04181dfb0f609b91c4, type: 3}
+  m_PrefabInstance: {fileID: 2028210417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &341689669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,7 +6065,7 @@ CircleCollider2D:
   m_Radius: 1.4656018
 --- !u!95 &610702109
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6074,7 +6082,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &613564370
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,6 +6145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382b1060f7885a84ca52c4d6e6441b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &641719451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7317060675883840861, guid: a2b1d393f4bbac04181dfb0f609b91c4, type: 3}
+  m_PrefabInstance: {fileID: 964372872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &667536145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6534,7 +6547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!95 &698571014
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6551,7 +6564,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &715032749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8414,7 +8427,7 @@ CircleCollider2D:
   m_Radius: 9.803704
 --- !u!95 &876195206
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8431,7 +8444,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &876195207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8885,6 +8898,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7317060675883840861, guid: 04a3a136743c63a45a07496847262fa5, type: 3}
   m_PrefabInstance: {fileID: 193629447}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &926937117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7317060675883840861, guid: a2b1d393f4bbac04181dfb0f609b91c4, type: 3}
+  m_PrefabInstance: {fileID: 1824836103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931629561
 GameObject:
   m_ObjectHideFlags: 0
@@ -9097,6 +9115,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &949184256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7317060675883840861, guid: a2b1d393f4bbac04181dfb0f609b91c4, type: 3}
+  m_PrefabInstance: {fileID: 2066486588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952607122
 GameObject:
   m_ObjectHideFlags: 0
@@ -9667,7 +9690,7 @@ CircleCollider2D:
   m_Radius: 2.2015104
 --- !u!95 &986806721
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9684,7 +9707,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &991457144
 GameObject:
   m_ObjectHideFlags: 0
@@ -10587,6 +10610,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1113221480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7317060675883840861, guid: a2b1d393f4bbac04181dfb0f609b91c4, type: 3}
+  m_PrefabInstance: {fileID: 891339069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116777828
 GameObject:
   m_ObjectHideFlags: 0
@@ -12901,7 +12929,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &1281441976
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -12918,7 +12946,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &1281441977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17319,6 +17347,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoBomb: {fileID: 667536145}
   Music: {fileID: 932690608}
+  leftDissolve:
+  - {fileID: 926937117}
+  - {fileID: 641719451}
+  - {fileID: 337438720}
+  - {fileID: 949184256}
+  - {fileID: 1113221480}
+  character: {fileID: 3675778335993474989}
 --- !u!61 &1759169726
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -23,6 +23,10 @@ public class GameBackToCo : MonoBehaviour
     }
     void GoBack()
     {
+        if(IsGameFinished.Instance.isLevel1Finished == false)
+        {
+            IsGameFinished.Instance.isLevel1LeftFinished = false;
+        }
         SceneManager.LoadScene(4);
     }
 }
