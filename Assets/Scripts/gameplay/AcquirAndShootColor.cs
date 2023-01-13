@@ -38,6 +38,8 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
     private bool isListFinished4 = true;
     public List<GameObject> gameObjects5 = new List<GameObject>();
     private bool isListFinished5 = true;
+    public List<GameObject> gameObjects6 = new List<GameObject>();
+    private bool isListFinished6 = true;
 
     public GameObject blood;
     private Animator anim_knife;
@@ -209,7 +211,24 @@ foreach (GameObject j in gameObjects1)
             }
             gameObjects5.Clear();
         }
+        //6
+        isListFinished6 = true;
+        foreach (GameObject i in gameObjects6)
+        {
+            if (i.GetComponent<MouseFloatAndDrawLine>().FloorColor.Equals(i.GetComponent<MouseFloatAndDrawLine>().correctColor))
+            {
 
+            }
+            else { isListFinished6 = false; }
+        }
+        if (isListFinished6)
+        {
+            foreach (GameObject j in gameObjects6)
+            {
+                StartCoroutine(StartDesolve(j));
+            }
+            gameObjects6.Clear();
+        }
     }
 
     IEnumerator StartDesolve(GameObject i)
