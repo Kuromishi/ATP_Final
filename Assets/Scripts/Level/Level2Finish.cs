@@ -26,11 +26,10 @@ public class Level2Finish : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (redHeart.activeSelf)
+        if (redHeart.GetComponent <SpriteRenderer >().color ==Color.red )
         {
             IsGameFinished.Instance.isLevel2Finished = true;
 
-            //Invoke("PlayVideo2", 1);
             StartCoroutine(PlayVideo2());
 
         }

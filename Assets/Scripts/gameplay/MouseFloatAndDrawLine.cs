@@ -15,7 +15,7 @@ public class MouseFloatAndDrawLine : MonoBehaviour
     private int sceneNum;
 
     public GameObject redHeart;
-    //public SpriteRenderer whiteheartRender;
+    public SpriteRenderer whiteheartRender;
 
     public AudioSource source;
     public AudioClip shoot;
@@ -90,12 +90,9 @@ if (this.gameObject == GameManager.Instance.line.GetComponent <DrawLine>().hitob
                 else if(Input.GetMouseButtonDown(1) && this.tag == "heart"&& characterColor.GetComponent<CharacterComponent>().CharacterColor == "red"&&GameObject .Find ("EventSystem").GetComponent <AcquirAndShootColor >().isFinish ==true )
                 {
                     source.PlayOneShot(shoot, 1F);
-                    redHeart.SetActive(true);
-
-                    //Color color=whiteheartRender.color;
-                    //color.g = 0;
-                    //color.b = 0;
-                    //whiteheartRender.color=color;
+                    //redHeart.SetActive(true);
+                    whiteheartRender = GetComponent<SpriteRenderer>();
+                    whiteheartRender.color = Color.red;
 
                     Instantiate(particleShoot, GameManager.Instance.line.GetComponent<DrawLine>().liziPos.position, Quaternion.identity);
                 }
