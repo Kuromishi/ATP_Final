@@ -18,7 +18,7 @@ public class AcquirAndShootColor : MonoBehaviour
 
     AudioSource source;
     public AudioClip bleed;
-
+    public Animator whiteheartAnim;
 
     [SerializeField ]private GameObject[] allObj;
     public bool isFinish = false;
@@ -116,8 +116,9 @@ public List<GameObject> gameObjects1 = new List<GameObject>();
                 XiechengCount();
                 anim_blood.SetBool("moving", true);
             anim_knife.SetBool("moving", true);
+                whiteheartAnim.SetBool("WhiteHeartMove", true);
 
-                
+
             }  
         }
 
