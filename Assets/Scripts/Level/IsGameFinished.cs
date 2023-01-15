@@ -10,6 +10,7 @@ public class IsGameFinished : MonoBehaviour
     public bool isLevel1Finished;
     public bool isLevel2Finished;
     public bool isLevel1LeftFinished=false;
+    public bool isReloadLevel1 = false;
 
     private void Awake()
     {

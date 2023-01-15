@@ -41,7 +41,7 @@ public class Level1Finish : MonoBehaviour
 
             IsGameFinished.Instance.isLevel1LeftFinished = true;
         }
-        if (IsGameFinished.Instance.isLevel1LeftFinished == true)
+        if (IsGameFinished.Instance.isLevel1LeftFinished && IsGameFinished.Instance.isReloadLevel1)
         {
             character.transform.position = new Vector3(-12.5f, -5.7f, character.transform.position.z);
             foreach (GameObject obj in leftDissolve)
@@ -51,8 +51,17 @@ public class Level1Finish : MonoBehaviour
                 Destroy(obj);
             }
         }
+        if (IsGameFinished.Instance.isReloadLevel1)
+        {
+            StartCoroutine(isReloadF());
+        }
     }
 
+    IEnumerator isReloadF()
+    {
+        yield return new WaitForSeconds(0.2f);
+        IsGameFinished.Instance.isReloadLevel1 = false;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -67,6 +76,7 @@ public class Level1Finish : MonoBehaviour
 
     public void ReloadGame()
     {
+        IsGameFinished.Instance.isReloadLevel1 = true;
             SceneManager.LoadScene("Level 1");
     }
 
