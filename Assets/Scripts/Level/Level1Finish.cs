@@ -17,6 +17,8 @@ public class Level1Finish : MonoBehaviour
     public List<GameObject> leftDissolve;
     public GameObject character;
     public GameObject bodyToHead;
+    public GameObject doorCollision;
+    public GameObject bodyLeft;
     public TalkButton talkButton;
 
     // Start is called before the first frame update
@@ -50,6 +52,11 @@ public class Level1Finish : MonoBehaviour
                 GameManager.Instance.acquirAndShootColor.RemoveFromList(obj);
                 Destroy(obj);
             }
+
+            bodyToHead.SetActive(true);
+            doorCollision.SetActive(false);
+            bodyLeft.SetActive(false);
+
         }
         if (IsGameFinished.Instance.isReloadLevel1)
         {
